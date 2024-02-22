@@ -1,0 +1,199 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+
+/* General styles */
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn_logout{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.btn_logout:hover
+{
+    background: white;
+    color: #162938;
+}
+
+/* Hero section styles */
+.hero {
+    padding: 150px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+
+/* Testimonials section styles */
+.testimonials {
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Testimonial container (for the entire slider) */
+.testimonial-container {
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Individual testimonial */
+
+.testimonials .h1{
+    font-size: 60px;
+    margin-bottom: 70px;
+}
+.testimonial {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust for responsiveness */
+    background-color: #f9f9f9;
+    padding: 30px; /* Increased padding for larger boxes */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+/* Testimonial image (rounded) */
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Testimonial quote */
+.testimonial blockquote {
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000; /* Black text color */
+}
+
+/* Testimonial author */
+.testimonial cite {
+    font-weight: bold;
+    font-size: 14px;
+    color: #000; /* Black text color */
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-info,
+.quick-links,
+.social-media {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.contact-info h3,
+.quick-links h3,
+.social-media h3 {
+    margin-bottom: 20px;
+}
+
+.contact-info p,
+.quick-links ul,
+.social-media ul {
+    margin-bottom: 10px;
+}
+
+.quick-links ul li {
+    margin-bottom: 5px;
+}
+
+.social-media ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media ul li:last-child {
+    margin-right: 0;
+}

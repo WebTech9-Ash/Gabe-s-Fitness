@@ -8,16 +8,34 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+}
+
 body
 {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #8360c3;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right bottom, #0d9c6f, #5725b4);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right bottom, #0d9c6f, #5725b4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: var(--primary-color);   
+}
 
+/* Light mode */
+.light-mode {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+/* Dark mode */
+.dark-mode {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 header
@@ -99,7 +117,7 @@ header
 .form_container
 {
     position: relative;
-    margin-top: 100px;
+    margin-top: 150px;
     width: 550px;
     height: max-content;
     background: transparent;
@@ -120,7 +138,7 @@ header
     right: 0;
     width: 45px;
     height: 45px;
-    background: #191654;
+    background: green;
     font-size: 2.5em;
     color: white;
     display: flex;
@@ -140,7 +158,7 @@ header
 .form_box > h2
 {
     font-size: 2.5em;
-    color: #131140;
+    color: var(--secondary-color);
     text-align: center;
 } 
 
@@ -149,7 +167,7 @@ header
     position: relative;
     width: 100%;
     height: 50px;
-    border-bottom: 2px solid #131140;
+    border-bottom: 2px solid var(--secondary-color);
     margin: 30px 0;
 }
 
@@ -158,7 +176,7 @@ header
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color: #131140;
+    color: var(--secondary-color);
     line-height: 57px;
 }
 
@@ -169,7 +187,7 @@ header
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #131140;
+    color: var(--secondary-color);
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
@@ -193,7 +211,7 @@ header
     border: none;
     outline: none;
     font-size: 1em;
-    color: #131140;
+    color: var(--secondary-color);
     font-weight: 500;
     padding: 0 35px 0 5px;
 }
@@ -209,7 +227,7 @@ header
 .columns > .column_box
 {
     border-bottom: none;
-    color: #131140;
+    color: var(--secondary-color);
 
 }
 
@@ -218,7 +236,7 @@ header
     padding-left: 5px;
     margin-bottom: 5px;
     font-size: 1em;
-    color: #131140;
+    color: var(--secondary-color);
     font-weight: 500;
     pointer-events: none;
 }
@@ -232,7 +250,7 @@ header
     border: 1px solid;
     outline: none;
     font-size: 1em;
-    color: #131140;
+    color: var(--secondary-color);
     font-weight: 500;
     padding: 0 5px 0 5px;
 }
@@ -240,7 +258,7 @@ header
 .radio_gender
 {
     font-size: 1em;
-    color: #131140;
+    color: var(--secondary-color);
     font-weight: 500;
 }
 
@@ -252,7 +270,7 @@ header
 .body_info
 {
     font-size: 1em;
-    color: #131140;
+    color: var(--secondary-color);
     font-weight: 500;
 }
 
@@ -265,13 +283,13 @@ header
 {
     background: none;
     outline: none;
-    border: 1px solid #131140;
+    border: 1px solid var(--secondary-color);
 }
 
 .fit_info > label
 {
     font-size: 1em;
-    color: #131140;
+    color: var(--secondary-color);
     font-weight: 500;
     margin-top: 10px;
 }
@@ -280,15 +298,15 @@ header
 {
     background: none;
     outline: none;
-    border: 1px solid #131140;
-    color: #131140;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .btn
 {
     width: 100%;
     height: 45px;
-    background: #191654;
+    background: green;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -301,7 +319,7 @@ header
 .login
 {
     font-size: .9em;
-    color: #070618;
+    color: var(--secondary-color);
     font-weight: 400;
     margin: 5px 0 15px;
 }
@@ -315,7 +333,7 @@ header
 .login > p > a
 {
     margin-left: 5px;
-    color: #070618;
+    color: var(--secondary-color);
     text-decoration: none; 
 }
 

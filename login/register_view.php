@@ -15,7 +15,7 @@
 
 <body>
     <header> 
-        <h2 class="logo"> Logo </h2>
+        <img src="../assets/logo (2).png" id="logo" alt="logo">
 
         <div class="navbar_toggle" id="mobile_menu">
             <span class="bar"></span> 
@@ -24,9 +24,8 @@
         </div>
 
         <nav class="navigation_bar">
-            <a href="#">Home</a>
+            <a href="../view/homepage.php">Home</a>
             <a href="#">About</a>
-            <a href="#">Contact</a>
             <button class="btn_register">Sign Up</button>
         </nav>
     </header>

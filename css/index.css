@@ -1,0 +1,156 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Manrope", sans-serif;
+}
+
+/* Light mode */
+.light-mode {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Dark mode */
+.dark-mode {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+    background: var(--primary-color);
+    z-index: 1000;
+}
+
+header .logo {
+    max-width: 80px;
+    color: var(--secondary-color); /* Use secondary color for logo */
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+header ul li a {
+    color: var(--secondary-color);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    text-decoration: underline;
+    color: green; /* Adjust hover color */
+}
+
+#icon {
+    width: 5;
+    cursor: pointer;
+}
+
+/* Main section */
+section {
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primary-color);
+    min-height: calc(100vh - 40px); /* Consider header height */
+}
+
+/* Text container */
+.container.text {
+    max-width: 600px;
+}
+
+.container.text h2 {
+    color: var(--secondary-color);
+    font-weight: 800; /* Removed "px" from font-weight */
+    line-height: 1.4em;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.container.text h2 span {
+    color: green;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.container.text p {
+    color: var(--secondary-color);
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+.container.text a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    padding: 10px 30px;
+    text-decoration: none;
+    background: green;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Image container */
+.container.image {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.container.image img {
+    max-width: 700px; /* Increased max-width */
+    height: auto; /* Maintain aspect ratio */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    transition: bottom 1s left 1s;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--primary-color); /* Semi-transparent black background */
+    color: var(--secondary-color); /* White text color */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
