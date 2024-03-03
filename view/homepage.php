@@ -19,9 +19,9 @@
             <a href="#" class="logo"><img src="../assets/logo (2).png"></a>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../view/homepage.php">Home</a></li>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="../view/dashboard_view.php">Dashboard</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>

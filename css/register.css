@@ -302,6 +302,11 @@ header
     color: var(--secondary-color);
 }
 
+.fit_info > select > option
+{
+    color: var(--secondary-color);
+}
+
 .btn
 {
     width: 100%;
@@ -370,7 +375,7 @@ header
 
     .navigation_bar.active
     {
-        background: #587aeb;
+        background: green;
         top: 100%;
         opacity: 1;
         transition: all 0.5s ease;

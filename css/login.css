@@ -8,7 +8,8 @@
     box-sizing: border-box;
 }
 
-:root {
+:root 
+{
     --primary-color: #000000;
     --secondary-color: #ffffff;
 }
@@ -28,7 +29,7 @@ body
     --primary-color: #000000;
     --secondary-color: #ffffff;
     background-color: var(--secondary-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 /* Dark mode */
@@ -36,7 +37,7 @@ body
     --primary-color: #ffffff;
     --secondary-color: #000000;
     background-color: var(--secondary-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 header
@@ -58,14 +59,14 @@ header
 {
     max-width: 100px;
     min-width: 80px;
-    color: var(--secondary-color); 
+    /* color: var(--secondary-color);  */
 }
 
 .navigation_bar > a
 {
     position: relative;
     font-size: 1.3em;
-    color: white;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
@@ -79,7 +80,7 @@ header
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background: white;
+    background: var(--primary-color);
     border-radius: 5px;
     transform: scaleX(0);
     transition: transform .5s;
@@ -98,12 +99,12 @@ header
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid var(--primary-color);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.3em;
-    color: white;
+    color: var(--primary-color);
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
@@ -111,8 +112,8 @@ header
 
 .navigation_bar > .btn_login:hover
 {
-    background: white;
-    color: #162938;
+    background: green;
+    color: var(--secondary-color);
 }
 
 .form_container
@@ -159,7 +160,7 @@ header
 .form_box > h2
 {
     font-size: 2.5em;
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
     text-align: center;
 } 
 
@@ -168,7 +169,7 @@ header
     position: relative;
     width: 100%;
     height: 50px;
-    border-bottom: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
     margin: 30px 0;
 }
 
@@ -177,7 +178,7 @@ header
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
     line-height: 57px;
 }
 
@@ -188,7 +189,7 @@ header
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
@@ -212,7 +213,7 @@ header
     border: none;
     outline: none;
     font-size: 1em;
-    color: var(--secondary-color);
+    /* color: var(--primary-color); */
     font-weight: 500;
     padding: 0 35px 0 5px;
 }
@@ -221,7 +222,7 @@ header
 .remember
 {
     font-size: .9em;
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
     font-weight: 400;
     margin: -15px 0 15px;
     display: flex;
@@ -236,7 +237,7 @@ header
 
 .remember > a
 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -262,7 +263,7 @@ header
 .register
 {
     font-size: .9em;
-    color: var(--secondary-color);
+    /* color: var(--primary-color); */
     font-weight: 400;
     margin: 5px 0 15px;
    
@@ -277,7 +278,7 @@ header
 .register > p > a
 {
     margin-left: 5px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;    
 }
 
@@ -332,7 +333,7 @@ header
         background: #fff;
     }
 
-    a
+    .navigation_bar > a
     {
         width: 100%;
         text-align: center;

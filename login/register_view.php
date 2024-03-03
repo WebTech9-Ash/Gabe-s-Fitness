@@ -94,17 +94,20 @@
                 <div class="body_info">
                     <div class="form-group">
                         <label for="height">Height (cm) </label>
+                        <!-- <box-icon name='vertical-top' ></box-icon> <box-icon name='vertical-bottom' ></box-icon> -->
                         <input type="number" class="form-control" id="height" name="height" min="0" max="300" step="0.1">
                     </div>
 
                     <div class="form-group">
                         <label for="weight">Weight (kg) </label>
+                        <!-- <box-icon name='horizontal-left' ></box-icon> <box-icon name='horizontal-right'></box-icon> -->
                         <input type="number" class="form-control" id="weight" name="weight" min="0" max="500" step="0.01">
                     </div>
                 </div>
 
                 <div class="fit_info">
                     <label for="fit_level"> Fitness Level </label>
+                    <!-- <box-icon name='dumbbell'></box-icon> -->
                     <select class="form-select form-select-sm" aria-label="Small select example" id="fit_level">
                         <option selected> Select fitness level </option>
                         <option value="1">Novice</option>
@@ -114,7 +117,8 @@
                 </div>
 
                 <div class="fit_info">
-                    <label for="fit_goal"> Fitness Goal </label>
+                    <label for="fit_goal"> Fitness Goal </label>  
+                    <!-- <box-icon name='bullseye'></box-icon> -->
                     <select class="form-select form-select-sm" aria-label="Small select example" id="fit_goal">
                         <option selected> Select fitness goal </option>
                         <option value="1"> Exercise </option>
@@ -126,6 +130,7 @@
 
                 <div class="fit_info">
                     <label for="fit_goal"> Health Conditions </label>
+                    <!-- <box-icon name='pulse'></box-icon> -->
                     <select class="form-select form-select-sm" aria-label="Small select example" id="fit_goal">
                         <option selected> Select possible health conditions </option>
                         <option value="1"> Heart conditions </option>
@@ -171,6 +176,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script> 
 <script src="../js/register.js"></script>  
 
 </html>
