@@ -24,13 +24,16 @@ if($result){
     $_SESSION["success"] = true;
 
     header("Location:../login/register_view.php");
+    $conn->close();
     exit();
 }else {
     $_SESSION["success"] = false;
     echo "Error: " . mysqli_error($conn);
+    header("Location:../login/register_view.php");
+    $conn->close();
+    exit();
 }
-$_SESSION["success"] = false;
-
-mysqli_close($conn);
 
 
+
+ 
