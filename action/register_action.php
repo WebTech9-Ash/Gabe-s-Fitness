@@ -21,7 +21,6 @@ $query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserTy
 $result = $conn->query($query);
 if($result){
     $_SESSION["success"] = true;
-
     header("Location:../login/register_view.php");
     $conn->close();
     exit();
@@ -31,6 +30,12 @@ if($result){
     $conn->close();
     exit();
 }
+
+$_SESSION["success"] = false;
+header("Location:../login/register_view.php");
+?>
+
+
 
 
 
