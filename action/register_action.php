@@ -15,16 +15,11 @@ $password = isset($_POST['password']) ? trim($_POST['password'] ): '';
 $fname = htmlspecialchars($fname, ENT_QUOTES, 'UTF-8');
 $lname= htmlspecialchars($lname, ENT_QUOTES, 'UTF-8');
 $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
-$gender = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
-$dob = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
-$password= htmlspecialchars($email, ENT_QUOTES,'UTF-8');
+$gender = htmlspecialchars($gender, ENT_QUOTES,'UTF-8');
+$dob = htmlspecialchars($dob, ENT_QUOTES,'UTF-8');
+$password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
 
-echo "$fname\n";
-echo "$lname\n";
-echo "$email\n";
-echo "$gender\n";
-echo"$dob\n";
-echo "$password\n";
+
 
 $query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserType) VALUES ('$fname', '$lname', '$gender', '$dob', '$password', '$email', '1')";
 $result = $conn->query($query);
