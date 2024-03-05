@@ -1,16 +1,12 @@
 <?php
 session_start();
 include("../setting/connection.php");
-
 $fname = isset($_POST['fname']) ? trim($_POST['fname']) : '';
 $lname = isset($_POST['lname']) ? trim($_POST['lname']) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 $gender = isset($_POST['gender']) ? trim($_POST['gender']) : '';
 $dob = isset($_POST['dob']) ? trim($_POST['dob']) : '';
 $password = isset($_POST['password']) ? trim($_POST['password'] ): '';
-
-
-
 
 $fname = htmlspecialchars($fname, ENT_QUOTES, 'UTF-8');
 $lname= htmlspecialchars($lname, ENT_QUOTES, 'UTF-8');
@@ -19,15 +15,22 @@ $gender = htmlspecialchars($gender, ENT_QUOTES,'UTF-8');
 $dob = htmlspecialchars($dob, ENT_QUOTES,'UTF-8');
 $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
 
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-
-$query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserType) VALUES ('$fname', '$lname', '$gender', '$dob', '$password', '$email', '1')";
+$query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserType) VALUES ('$fname', '$lname', '$gender', '$dob', '$hashedpassword', '$email', '1')";
 $result = $conn->query($query);
 if($result){
+
+    $_SESSION["success"] = true;
+
     header("Location:../view/homepage.php");
+    exit();
 }else {
+    $_SESSION["success"] = false;
     echo "Error: " . mysqli_error($conn);
 }
+$_SESSION["success"] = false;
+
 
 mysqli_close($conn);
 

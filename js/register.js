@@ -79,6 +79,22 @@ function validateForm()
     }
 }
 
+function closePopupun() {
+    window.location.href = "../login/login_view.php";
+    $(".overlay").remove();
+    
+
+
+}
+
+function closePopupdeux() {
+    window.location.href = "../login/register_view.php";
+    $(".overlay").remove();
+    
+    
+
+}
+
 
 // function toggleColorScheme() 
 // {

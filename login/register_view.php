@@ -1,6 +1,31 @@
 <?php
 
+    session_start();
+    if(isset($_SESSION['success']) && $_SESSION['success'] === true) {
+        echo "<div class='overlay'>
+                <div class='popup'>
+                    <p>The user already exist. Please login !</p>
+                    <button onclick='closePopupun()'>OK</button>
+                </div>
+              </div>";
+
+        unset($_SESSION["success"]);
+    }
+
+
+   
+    if(isset($_SESSION['success']) && $_SESSION['success'] === true) {
+        echo "<div class='overlay'>
+                <div class='popup'>
+                    <p>Registration successful! Please click the button to go to the login page.</p>
+                    <button onclick='closePopupun()'>OK</button>
+                </div>
+              </div>";
+
+        unset($_SESSION["success"]);
+    }
 ?>
+      
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +54,8 @@
             <button class="btn_register">Sign Up</button>
         </nav>
     </header>
+
+    
 
     <div class="form_container">
         <span class="close_icon">
