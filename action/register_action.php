@@ -9,6 +9,13 @@ $gender = isset($_POST['gender']) ? trim($_POST['gender']) : '';
 $dob = isset($_POST['dob']) ? trim($_POST['dob']) : '';
 $password = isset($_POST['password']) ? trim($_POST['password'] ): '';
 
+echo "$fname";
+echo "$lname";
+echo "$email";
+echo "$gender";
+echo"$dob";
+echo "$password";
+
 
 $fname = htmlspecialchars($fname, ENT_QUOTES, 'UTF-8');
 $lname= htmlspecialchars($lname, ENT_QUOTES, 'UTF-8');
