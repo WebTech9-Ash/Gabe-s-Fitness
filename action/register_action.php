@@ -20,7 +20,6 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 $query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserType) VALUES ('$fname', '$lname', '$gender', '$dob', '$hashed_password', '$email', '1')";
 $result = $conn->query($query);
 if($result){
-
     $_SESSION["success"] = true;
 
     header("Location:../login/register_view.php");
@@ -28,11 +27,13 @@ if($result){
     exit();
 }else {
     $_SESSION["success"] = false;
-    echo "Error: " . mysqli_error($conn);
     header("Location:../login/register_view.php");
     $conn->close();
     exit();
 }
+
+
+
 
 
 
