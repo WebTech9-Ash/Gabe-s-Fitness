@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    if(isset($_SESSION['success']) && $_SESSION['success'] === true) {
+    if(isset($_SESSION['success']) && $_SESSION['success'] === false) {
         echo "<div class='overlay'>
                 <div class='popup'>
                     <p>The user already exist. Please login !</p>

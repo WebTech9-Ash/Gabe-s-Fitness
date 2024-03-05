@@ -360,13 +360,13 @@ background: #fff;
 padding: 20px;
 border-radius: 5px;
 text-align: center;
-background-color: #368983;
 }
 
 .popup button {
 padding: 10px;
 margin-top: 10px;
 cursor: pointer;
+background-color: white;
    }
 
 .login > p > a:hover
