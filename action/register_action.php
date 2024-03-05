@@ -30,8 +30,9 @@ if($result){
     header("Location:../login/register_view.php");
     $conn->close();
     exit();
-}
-?>
+};
+
+
 
 
 

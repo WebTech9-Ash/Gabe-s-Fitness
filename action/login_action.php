@@ -29,7 +29,7 @@ $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
           } else {
 
             $_SESSION['loginFailed'] = true;
-            header("Location:../view/homepage.php");
+            header("Location:../login/login_view.php");
           }
         
         }
