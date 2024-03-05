@@ -76,14 +76,14 @@
                     <div class="radio_gender">
                         <label> Gender </label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" checked>
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Female
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioCheckedDefault2">
+                            <input class="form-check-input" type="radio" name="gender" id="flexRadioCheckedDefault2">
                             <label class="form-check-label" for="flexRadioCheckedDefault2">
                                 Male
                             </label>

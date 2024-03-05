@@ -11,6 +11,8 @@ CREATE TABLE Users (
     UserID INT PRIMARY KEY auto_increment,
     FirstName VARCHAR(255) NOT NULL,
     LastName VARCHAR(255) NOT NULL,
+    Gender int(1) Check(Gender in (0,1)),
+    dob DATE,
     Passwd VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
     RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
