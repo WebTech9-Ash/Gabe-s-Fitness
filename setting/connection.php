@@ -1,5 +1,4 @@
 <?php
-  echo "I am the code already";
   $db_host = '127.0.0.1';
   $db_user = 'GABES2025';
   $db_password = 'Team9';
