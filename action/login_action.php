@@ -9,10 +9,10 @@ $password = isset($_POST['password']) ? trim($_POST['password'] ): '';
 $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
 $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
 
-echo "email";
-echo "password";
+echo "$email";
+echo "$password";
   
-  $sql = "SELECT UserID, UserType, Passwd FROM People WHERE email = '$email'";
+  $sql = "SELECT UserID, UserType, Passwd FROM Users  WHERE email = '$email'";
   $result = mysqli_query($conn, $sql);
   if ($result) {
       $row = mysqli_fetch_assoc($result);
