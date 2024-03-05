@@ -36,7 +36,7 @@
         </span>
         <div class="form_box">
             <h2>Register</h2>
-            <form action="../action/register_action.php" method="post" name=register onsubmit="return validateForm()" id="register">
+            <form action="../action/register_action.php" method="post" name=register id="register">
                 <div class="input_box">
                     <span class="icons">
                         <ion-icon name="person"></ion-icon>
@@ -148,7 +148,7 @@
                     <span class="icons">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    Password entry
+                   
                     <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <label for="password">Password</label>
                 </div>
