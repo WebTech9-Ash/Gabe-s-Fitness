@@ -17,20 +17,19 @@ $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-$query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserType) VALUES ('$fname', '$lname', '$gender', '$dob', '$hashedpassword', '$email', '1')";
+$query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserType) VALUES ('$fname', '$lname', '$gender', '$dob', '$hashed_password', '$email', '1')";
 $result = $conn->query($query);
 if($result){
 
     $_SESSION["success"] = true;
 
-    header("Location:../view/homepage.php");
+    header("Location:../login/register_view.php");
     exit();
 }else {
     $_SESSION["success"] = false;
     echo "Error: " . mysqli_error($conn);
 }
 $_SESSION["success"] = false;
-
 
 mysqli_close($conn);
 
