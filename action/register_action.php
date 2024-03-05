@@ -24,7 +24,7 @@ $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
 $query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserType) VALUES ('$fname', '$lname', '$gender', '$dob', '$password', '$email', '1')";
 $result = $conn->query($query);
 if($result){
-    header("Location:view/homepage.php");
+    header("Location:../view/homepage.php");
 }else {
     echo "Error: " . mysqli_error($conn);
 }
