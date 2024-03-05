@@ -21,6 +21,9 @@
 
   else{
 
+    $query = "INSERT INTO Users (UserID, FirstName, LastName, Passwd, Email, UserType) VALUES (NULL, '    Aline', 'Kubwimana', '123jye', 'aline.nurerwanayo@ashesi.edu.gh', 1)";
+    $conn->query($query);
+
     echo"Success";
   }
 

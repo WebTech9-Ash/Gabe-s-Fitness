@@ -1,5 +1,5 @@
 
-Drop database if exists Gyms_Management;
+Drop database if exists GABES2025;
 
 create database GABES2025;
 
@@ -8,14 +8,22 @@ use GABES2025;
 
 -- Users table
 CREATE TABLE Users (
-    UserID INT PRIMARY KEY,
-    UserName VARCHAR(255) NOT NULL,
-    Password VARCHAR(255) NOT NULL,
+    UserID INT PRIMARY KEY auto_increment,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    Passwd VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
-    UserType ENUM('Gym Owner', 'Gym Goer', 'Trainer') NOT NULL,
     RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    LastLogin TIMESTAMP,
     UNIQUE (Email)
+);
+
+
+-- User type
+
+CREATE TABLE UserTypes(
+TypeId INT PRIMARY KEY auto_increment,
+TypeName VARCHAR(255),
+UNIQUE(TypeName)
 );
 
 -- Gyms Table
@@ -58,8 +66,18 @@ CREATE TABLE Equipment (
     GymID INT,
     PurchaseDate DATE,
     WarrantyExpirationDate DATE,
-    CurrentStatus ENUM('In Use', 'Available', 'Under Maintenance') NOT NULL,
     FOREIGN KEY (GymID) REFERENCES Gyms(GymID)
+);
+
+
+
+-- 	Equipment status table
+
+CREATE TABLE EquipmentStatus(
+StatusId INT PRIMARY KEY auto_increment,
+StatusName Varchar(255),
+UNIQUE(StatusName)
+
 );
 
 -- ClassSessions Table
@@ -120,4 +138,25 @@ CREATE TABLE WorkoutExercises (
     RestDuration INT,  -- in seconds
     FOREIGN KEY (WorkoutID) REFERENCES Workouts(WorkoutID)
 );
+
+ALTER TABLE Users
+ADD COLUMN UserType int;
+
+
+ALTER TABLE Users
+ADD CONSTRAINT fk_UserType
+FOREIGN KEY (UserType)
+REFERENCES UserTypes(TypeId);
+
+
+ALTER TABLE Equipment
+ADD COLUMN Status int not null;
+
+ALTER TABLE Equipment
+ADD constraint fk_Status
+FOREIGN KEY(Status)
+REFERENCES EquipmentStatus(StatusId);
+
+
+
 
