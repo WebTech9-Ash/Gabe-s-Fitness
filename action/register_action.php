@@ -18,8 +18,8 @@ $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 $query = "INSERT INTO Users (FirstName,LastName,Gender,dob,Passwd, Email, UserType) VALUES ('$fname', '$lname', '$gender', '$dob', '$hashed_password', '$email', '1')";
-
-if($conn->query($query)){
+$result = mysqli_query($conn, $query);
+if($result){
     $_SESSION["success"] = true;
     header("Location:../login/register_view.php");
     $conn->close();

@@ -37,7 +37,7 @@
         </span>
         <div class="form_box">
             <h2>Login</h2>
-            <form action="#" method="POST" name=login onsubmit="return validateForm()" id="login">
+            <form action="../action/login_action.php" method="POST" name=login  id="login">
 
                 <div class="input_box">
                     <span class="icons">
