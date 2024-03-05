@@ -36,7 +36,7 @@
         </span>
         <div class="form_box">
             <h2>Register</h2>
-            <form action="#" method="POST" name=register onsubmit="return validateForm()" id="register">
+            <form action="../action/register_action.php" method="post" name=register onsubmit="return validateForm()" id="register">
                 <div class="input_box">
                     <span class="icons">
                         <ion-icon name="person"></ion-icon>
@@ -91,23 +91,23 @@
                     </div>  
                 </div>
 
+              <!--
+
                 <div class="body_info">
                     <div class="form-group">
                         <label for="height">Height (cm) </label>
-                        <!-- <box-icon name='vertical-top' ></box-icon> <box-icon name='vertical-bottom' ></box-icon> -->
+                        <box-icon name='vertical-top' ></box-icon> <box-icon name='vertical-bottom' ></box-icon> 
                         <input type="number" class="form-control" id="height" name="height" min="0" max="300" step="0.1">
                     </div>
 
                     <div class="form-group">
-                        <label for="weight">Weight (kg) </label>
-                        <!-- <box-icon name='horizontal-left' ></box-icon> <box-icon name='horizontal-right'></box-icon> -->
+                        <label for="weight">Weight (kg) </label
                         <input type="number" class="form-control" id="weight" name="weight" min="0" max="500" step="0.01">
                     </div>
                 </div>
 
                 <div class="fit_info">
                     <label for="fit_level"> Fitness Level </label>
-                    <!-- <box-icon name='dumbbell'></box-icon> -->
                     <select class="form-select form-select-sm" aria-label="Small select example" id="fit_level">
                         <option selected> Select fitness level </option>
                         <option value="1">Novice</option>
@@ -116,9 +116,11 @@
                     </select>
                 </div>
 
+          
+
                 <div class="fit_info">
                     <label for="fit_goal"> Fitness Goal </label>  
-                    <!-- <box-icon name='bullseye'></box-icon> -->
+                  <box-icon name='bullseye'></box-icon> 
                     <select class="form-select form-select-sm" aria-label="Small select example" id="fit_goal">
                         <option selected> Select fitness goal </option>
                         <option value="1"> Exercise </option>
@@ -130,7 +132,7 @@
 
                 <div class="fit_info">
                     <label for="fit_goal"> Health Conditions </label>
-                    <!-- <box-icon name='pulse'></box-icon> -->
+                     <box-icon name='pulse'></box-icon> 
                     <select class="form-select form-select-sm" aria-label="Small select example" id="fit_goal">
                         <option selected> Select possible health conditions </option>
                         <option value="1"> Heart conditions </option>
@@ -140,13 +142,13 @@
                         <option value="4"> Pregnancy </option>
                         <option value="4"> Not Applicable </option>
                     </select>
-                </div>
-               
+                </div>  
+                -->
                 <div class="input_box">
                     <span class="icons">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <!-- Password entry -->
+                    Password entry
                     <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <label for="password">Password</label>
                 </div>

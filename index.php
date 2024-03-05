@@ -18,7 +18,7 @@
     <header> 
         <a href="#" class="logo"><img src="assets/logo (2).png" id="logo"></a>
         <ul>
-            <li class="link"><a href="view/homepage.php">Home</a></li>
+            <li class="link"><a href="#">Home</a></li>
             <li class="link"><a href="#">About Us</a></li>
             <li class="link"><a href="login/register_view.php">Sign up</a></li>
             <li class="link"><a href="login/login_view.php">Login</a></li>
