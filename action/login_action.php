@@ -9,8 +9,6 @@ $password = isset($_POST['password']) ? trim($_POST['password'] ): '';
 $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
 $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
 
-echo "$email";
-echo "$password";
   
   $sql = "SELECT UserID, UserType, Passwd FROM Users  WHERE email = '$email'";
   $result = mysqli_query($conn, $sql);
@@ -21,8 +19,6 @@ echo "$password";
   
       if ($row) {
         
-
-
           $hashedPasswordFromDatabase = $row['Passwd'];
   
           if (password_verify($password, $hashedPasswordFromDatabase)) {
@@ -33,9 +29,7 @@ echo "$password";
           } else {
 
             $_SESSION['loginFailed'] = true;
-           
-
-            header("Location:../login/login_view.php");
+            header("Location:../view/homepage.php");
           }
         
         }
