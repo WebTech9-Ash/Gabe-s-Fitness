@@ -8,13 +8,19 @@ $password = isset($_POST['password']) ? trim($_POST['password'] ): '';
 
 $email = htmlspecialchars($email, ENT_QUOTES,'UTF-8');
 $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
+
+echo "email";
+echo "password";
   
   $sql = "SELECT UserID, UserType, Passwd FROM People WHERE email = '$email'";
   $result = mysqli_query($conn, $sql);
   if ($result) {
       $row = mysqli_fetch_assoc($result);
+
+      echo "Already in the condition";
   
       if ($row) {
+        
 
 
           $hashedPasswordFromDatabase = $row['Passwd'];
@@ -38,10 +44,6 @@ $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
       $_SESSION['loginFailed'] = true;
       header("Location:../login/login_view.php");
       exit();
-
-
-
-
     }
       
   } else {
