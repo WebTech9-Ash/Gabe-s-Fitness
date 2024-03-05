@@ -1,10 +1,10 @@
 
 Drop database if exists Gyms_Management;
 
-create database Gyms_Management;
+create database GABES2025;
 
 
-use Gyms_Management;
+use GABES2025;
 
 -- Users table
 CREATE TABLE Users (
