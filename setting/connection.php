@@ -1,7 +1,7 @@
 <?php
   $db_host = 'localhost';
   $db_user = 'GABES2025';
-  $db_password = 'GABES2025';
+  $db_password = 'Team9';
   $db_db = 'GABES2025';
   $conn = new mysqli(
     $db_host,
@@ -14,7 +14,7 @@
     echo 'Errno: '.$conn->connect_errno;
     echo '<br >';
     echo 'Error: '.$conn->connect_error;
-    exit();
+    echo "The error has happened";
   }
 
   else{
