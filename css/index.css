@@ -49,7 +49,7 @@ header {
 
 header .logo {
     max-width: 80px;
-    color: var(--secondary-color); /* Use secondary color for logo */
+    color: var(--primary-color); /* Use secondary color for logo */
 }
 
 header ul {
@@ -62,7 +62,7 @@ header ul li {
 }
 
 header ul li a {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 400;
     text-decoration: none;
 }
@@ -83,7 +83,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     min-height: calc(100vh - 40px); /* Consider header height */
 }
 
@@ -93,7 +93,7 @@ section {
 }
 
 .container.text h2 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 800; /* Removed "px" from font-weight */
     line-height: 1.4em;
     font-size: 50px;
@@ -107,19 +107,19 @@ section {
 }
 
 .container.text p {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 400;
     line-height: 1.5em;
 }
 
 .container.text a {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 40px;
     padding: 10px 30px;
     text-decoration: none;
-    background: green;
+    background:var(--secondary-color);
     margin-top: 20px;
     display: inline-block;
 }
@@ -146,8 +146,8 @@ section {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color); /* Semi-transparent black background */
-    color: var(--secondary-color); /* White text color */
+    background-color: var(--secondary-color); /* Semi-transparent black background */
+    color: var(--primary-color); /* White text color */
     padding: 20px;
     text-align: center;
     position: fixed;

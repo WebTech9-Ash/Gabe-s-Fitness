@@ -1,5 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+
+*
+{
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root 
+{
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+}
+
+
+/* Light mode */
+.light-mode {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Dark mode */
+.dark-mode {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
 /* Resetting default margin and padding */
 * {
     margin: 0;
@@ -10,8 +41,8 @@
 
 /* General styles */
 body {
-    background-color: #000;
-    color: #fff;
+    background-color:var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .container {
@@ -22,7 +53,7 @@ body {
 
 /* Header styles */
 header {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--secondary-color);
     padding: 20px 0;
     position: fixed;
     top: 0;
@@ -38,7 +69,7 @@ header .container {
 }
 
 .logo {
-    color: #fff;
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 24px;
 }
@@ -54,7 +85,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color:var(--primary-color);
     text-decoration: none;
 }
 
@@ -68,7 +99,7 @@ a{
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid var(--primary-color);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
@@ -81,8 +112,8 @@ a{
 
 .btn_logout:hover
 {
-    background: white;
-    color: #162938;
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 /* Hero section styles */
@@ -128,10 +159,10 @@ a{
 }
 .testimonial {
     flex: 0 0 calc(33.33% - 20px); /* Adjust for responsiveness */
-    background-color: #f9f9f9;
+    background-color: var(--secondary-color);
     padding: 30px; /* Increased padding for larger boxes */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--primary-color);
     transition: transform 0.3s ease;
 }
 
@@ -153,19 +184,19 @@ a{
     margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.4;
-    color: #000; /* Black text color */
+    color: var(--primary-color); /* Black text color */
 }
 
 /* Testimonial author */
 .testimonial cite {
     font-weight: bold;
     font-size: 14px;
-    color: #000; /* Black text color */
+    color: var(--primary-color); /* Black text color */
 }
 
 /* Footer styles */
 footer {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--secondary-color);
     padding: 50px 0;
     text-align: center;
 }
