@@ -1,5 +1,7 @@
 <?php
-
+ include("../setting/connection.php");
+ include("../setting/core.php");
+ isLogin();
 ?>
 
 <!DOCTYPE html>
