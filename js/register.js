@@ -116,7 +116,6 @@ function closePopupdeux() {
 //         }
 // }
 
-
 function toggleColorScheme() 
 {
     const body = document.body;
@@ -127,14 +126,13 @@ function toggleColorScheme()
         const logo = document.getElementById('logo');
         if (!body.classList.contains('dark-mode')) 
         {
-            console.log('light')
             logo.src = '../assets/blogo.png'; // Change to dark mode logo
             document.getElementById('toggle').src = '../assets/moon.png'; // Change toggle image to moon
         } 
         else 
         {
             console.log('dark')
-            logo.src = '../assets/logo (2).png'; // Change back to light mode logo
+            logo.src = '../assets/logo.png'; // Change back to light mode logo
             document.getElementById('toggle').src = '../assets/sun.png'; // Change toggle image to sun
         }
 }
