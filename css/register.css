@@ -140,7 +140,7 @@ header
     height: 45px;
     background: green;
     font-size: 2.5em;
-    color: white;
+    color: var(--secondary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -311,13 +311,13 @@ header
 {
     width: 100%;
     height: 45px;
-    background: green;
+    color: var(--primary-color);
     border: none;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.3em;
-    color: white;
+    color: var(--secondary-color);
     font-weight: 400;
 }
 
@@ -356,7 +356,7 @@ header
 }
 
 .popup {
-background: #fff;
+background:var(--primary-color);;
 padding: 20px;
 border-radius: 5px;
 text-align: center;
@@ -366,7 +366,7 @@ text-align: center;
 padding: 10px;
 margin-top: 10px;
 cursor: pointer;
-background-color: white;
+background-color:  var(--primary-color);;
    }
 
 .login > p > a:hover

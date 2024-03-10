@@ -20,7 +20,7 @@ isNotLogin();
 <body class="light-mode">
     <header>
         <div class="container">
-            <a href="#" class="logo"><img src="../assets/sun.png"></a>
+            <a class="logo"><img src="../assets/sun.png"></a>
             <nav>
                 <ul>
                     <li><a href="../view/homepage.php">Home</a></li>
