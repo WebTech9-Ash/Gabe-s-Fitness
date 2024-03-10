@@ -42,7 +42,7 @@
         <p>&copy; 2024 Gabe's Fitness. All rights reserved.</p>
     </footer>
 
-    <script src="js/index.js">
+    <script src="../js/index.js">
         
     </script>
 
