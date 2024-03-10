@@ -33,7 +33,7 @@ isNotLogin();
             <div class="user-account">
                 <button class="btn_logout" id="btn_logout">Log out</button>
             </div>
-            <img src="../assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
+             <img src="../assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
         </div>
     </header>
 

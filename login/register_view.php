@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="../css/register.css">
 </head>
 
-<body>
+<body class="light-mode" >
     <header> 
         <img src="../assets/logo (2).png" id="logo" alt="logo">
 
@@ -59,7 +59,7 @@
             <a href="#">About</a>
             <button class="btn_register">Sign Up</button>
         </nav>
-        <img src="../assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
+        
     </header>
 
     
