@@ -22,7 +22,7 @@
             <li class="link"><a href="login/register_view.php">Sign up</a></li>
             <li class="link"><a href="login/login_view.php">Login</a></li>
         </ul>
-        <img src="assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
+        <img src="../assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
     </header>
 
     <section> 
