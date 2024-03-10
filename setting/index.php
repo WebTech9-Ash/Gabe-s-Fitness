@@ -1,5 +1,5 @@
 <?php
 
-header ('Location:/view/landingpage.php');
+header ('Location:../view/landingpage.php');
 
 ?>
