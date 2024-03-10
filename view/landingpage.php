@@ -14,7 +14,7 @@
 </head>
 <body class="light-mode">
 
-    <header> 
+    <header class = navbar> 
        <img src="../assets/logo.png" id="logo" alt="logo">
         <ul>
             <li class="link"><a href="../view/homepage.php">Home</a></li>
@@ -34,13 +34,13 @@
             </div>
         </div>
         <div class="image">
-            <img src="assets/pexels-marcus-chan-17898141-removebg-preview.png" class="man" alt=" "/>
+            <img src="../assets/pexels-marcus-chan-17898141-removebg-preview.png" class="man" alt=" "/>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Gabe's Fitness. All rights reserved.</p>
-    </footer>
+    </footer class = "footer">
 
     <script src="../js/index.js">
         

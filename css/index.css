@@ -8,6 +8,8 @@
 :root {
     --primary-color: #000000;
     --secondary-color: #ffffff;
+    --header-color : 
+    --footer_color :
 }
 
 body {
@@ -43,7 +45,8 @@ header {
     align-items: center;
     justify-content: space-between;
     font-size: 17px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
+    color : var(--primary-color);
     z-index: 1000;
 }
 
