@@ -45,6 +45,7 @@ header .container {
 
 nav ul {
     list-style: none;
+
 }
 
 nav ul li {
@@ -55,6 +56,12 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+a{
+
+    text-decoration: none;
+
 }
 
 .btn_logout{

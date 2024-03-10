@@ -46,8 +46,6 @@
 
 <body class="light-mode" >
     <header> 
-        <img src="../assets/logo (2).png" id="logo" alt="logo">
-
         <div class="navbar_toggle" id="mobile_menu">
             <span class="bar"></span> 
             <span class="bar"></span>
@@ -59,7 +57,7 @@
             <a href="#">About</a>
             <button class="btn_register">Sign Up</button>
         </nav>
-        
+        <img src="../assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
     </header>
 
     

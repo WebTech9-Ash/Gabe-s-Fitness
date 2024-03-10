@@ -17,8 +17,6 @@
 
 <body class="light-mode">
     <header> 
-        <img src="../assets/logo (2).png" id="logo" alt="logo">
-
         <div class="navbar_toggle" id="mobile_menu">
             <span class="bar"></span> 
             <span class="bar"></span>

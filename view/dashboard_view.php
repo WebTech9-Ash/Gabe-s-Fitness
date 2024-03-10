@@ -18,7 +18,6 @@ isNotLogin();
     <header>
         <!-- header and navigation bar -->
         <div class="container">
-            <a href="#" class="logo"><img src="../assets/logo (2).png"></a>
             <nav>
                 <ul>
                     <li><a href="../view/homepage.php">Home</a></li>
