@@ -59,6 +59,7 @@
             <a href="#">About</a>
             <button class="btn_register">Sign Up</button>
         </nav>
+        <img src="../assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
     </header>
 
     

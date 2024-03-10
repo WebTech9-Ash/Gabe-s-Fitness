@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,13 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 <body class="light-mode">
 
     <header> 
         <a href="#" class="logo"><img src="assets/logo (2).png" id="logo"></a>
         <ul>
-            <li class="link"><a href="#">Home</a></li>
+            <li class="link"><a href="../view/homepage.php">Home</a></li>
             <li class="link"><a href="#">About Us</a></li>
             <li class="link"><a href="login/register_view.php">Sign up</a></li>
             <li class="link"><a href="login/login_view.php">Login</a></li>
