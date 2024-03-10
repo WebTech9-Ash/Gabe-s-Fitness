@@ -1,4 +1,10 @@
 <?php
+session_start();
+include("../setting/connection.php");
+include("../setting/core.php");
+
+isLogin();
+
 
 
 ?>

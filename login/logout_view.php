@@ -1,6 +1,4 @@
 <?php
-
-header ('Location: ../login/login_view.php');
-
-
+unset($_SESSION['userId']);
+unset($_SERVER['userRole']);
 ?>
