@@ -5,8 +5,6 @@ include("../setting/core.php");
 
 isLogin();
 
-
-
 ?>
 
 <!DOCTYPE html>

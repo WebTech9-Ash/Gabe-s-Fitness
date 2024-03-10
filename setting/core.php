@@ -2,7 +2,7 @@
 
 function isLogin(){
     
-    if(isset($_SESSION['userId'])&& $_SESSION['userId']!= null){
+    if(isset($_SESSION['userId'])){
 
     }
 
