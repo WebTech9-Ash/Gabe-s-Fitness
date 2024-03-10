@@ -45,8 +45,8 @@ header {
     align-items: center;
     justify-content: space-between;
     font-size: 17px;
-    background: var(--secondary-color);
-    color : var(--primary-color);
+    background: var(--primary-color);
+    color : var(--secondary-color);
     z-index: 1000;
 }
 
@@ -65,7 +65,7 @@ header ul li {
 }
 
 header ul li a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: 400;
     text-decoration: none;
 }
@@ -149,8 +149,8 @@ section {
 
 /* Footer */
 footer {
-    background-color: var(--secondary-color); /* Semi-transparent black background */
-    color: var(--primary-color); /* White text color */
+    background-color: var(--primary-color); /* Semi-transparent black background */
+    color: var(--secondary-color); /* White text color */
     padding: 20px;
     text-align: center;
     position: fixed;
