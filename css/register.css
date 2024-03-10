@@ -8,7 +8,8 @@
     box-sizing: border-box;
 }
 
-:root {
+:root 
+{
     --primary-color: #000000;
     --secondary-color: #ffffff;
 }
@@ -22,12 +23,13 @@ body
     background-color: var(--primary-color);   
 }
 
+
 /* Light mode */
 .light-mode {
     --primary-color: #000000;
     --secondary-color: #ffffff;
     background-color: var(--secondary-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 /* Dark mode */
@@ -35,7 +37,7 @@ body
     --primary-color: #ffffff;
     --secondary-color: #000000;
     background-color: var(--secondary-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 header
@@ -64,7 +66,7 @@ header
 {
     position: relative;
     font-size: 1.3em;
-    color: white;
+    color:var(--primary-color);
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
@@ -78,7 +80,7 @@ header
     bottom: -6px;
     width: 100%;
     height: 3px;
-    background: white;
+    background:var(--secondary-color);
     border-radius: 5px;
     transform: scaleX(0);
     transition: transform .5s;
@@ -97,7 +99,7 @@ header
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid var(--secondary-color);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
@@ -110,8 +112,8 @@ header
 
 .navigation_bar > .btn_register:hover
 {
-    background: white;
-    color: #162938;
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .form_container
@@ -121,7 +123,7 @@ header
     width: 550px;
     height: max-content;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
+    border: 2px solid var(--secondary-color);
     border-radius: 20px;
     backdrop-filter: blur(20px); 
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
@@ -138,9 +140,9 @@ header
     right: 0;
     width: 45px;
     height: 45px;
-    background: green;
+    background: var(--secondary-color);
     font-size: 2.5em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +160,7 @@ header
 .form_box > h2
 {
     font-size: 2.5em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-align: center;
 } 
 
@@ -167,7 +169,7 @@ header
     position: relative;
     width: 100%;
     height: 50px;
-    border-bottom: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
     margin: 30px 0;
 }
 
@@ -176,7 +178,7 @@ header
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     line-height: 57px;
 }
 
@@ -187,7 +189,7 @@ header
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
@@ -211,7 +213,7 @@ header
     border: none;
     outline: none;
     font-size: 1em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
     padding: 0 35px 0 5px;
 }
@@ -227,7 +229,7 @@ header
 .columns > .column_box
 {
     border-bottom: none;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 
 }
 
@@ -236,7 +238,7 @@ header
     padding-left: 5px;
     margin-bottom: 5px;
     font-size: 1em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
     pointer-events: none;
 }
@@ -250,7 +252,7 @@ header
     border: 1px solid;
     outline: none;
     font-size: 1em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
     padding: 0 5px 0 5px;
 }
@@ -258,7 +260,7 @@ header
 .radio_gender
 {
     font-size: 1em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
 }
 
@@ -270,7 +272,7 @@ header
 .body_info
 {
     font-size: 1em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
 }
 
@@ -283,13 +285,13 @@ header
 {
     background: none;
     outline: none;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .fit_info > label
 {
     font-size: 1em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
     margin-top: 10px;
 }
@@ -298,13 +300,13 @@ header
 {
     background: none;
     outline: none;
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--primary-color);
     color: var(--secondary-color);
 }
 
 .fit_info > select > option
 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .btn
@@ -324,7 +326,7 @@ header
 .login
 {
     font-size: .9em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 400;
     margin: 5px 0 15px;
 }
@@ -338,7 +340,7 @@ header
 .login > p > a
 {
     margin-left: 5px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none; 
 }
 
@@ -356,7 +358,7 @@ header
 }
 
 .popup {
-background:var(--primary-color);;
+background:var(--secondary-color);;
 padding: 20px;
 border-radius: 5px;
 text-align: center;
@@ -366,7 +368,7 @@ text-align: center;
 padding: 10px;
 margin-top: 10px;
 cursor: pointer;
-background-color:  var(--primary-color);;
+background-color:  var(--secondary-color);;
    }
 
 .login > p > a:hover
