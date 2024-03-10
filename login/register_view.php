@@ -2,7 +2,6 @@
     include("../setting/connection.php");
     include("../setting/core.php");
     isLogin();
-
     session_start();
     if(isset($_SESSION['success']) && $_SESSION['success'] === false) {
         echo "<div class='overlay'>

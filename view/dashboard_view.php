@@ -1,7 +1,7 @@
 <?php
 include("../setting/connection.php");
 include("../setting/core.php");
-isLogin();
+isNotLogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
