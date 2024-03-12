@@ -30,16 +30,18 @@
     color: var(--secondary-color);
 }
 
-body 
+body
 {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
 }
 
 /* Header */
 header 
 {
-    background-color: var(--primary-color);;
+    background-color: var(--secondary-color);
+    backdrop-filter: blur(50px); 
     padding: 20px 0;
     position: fixed;
     top: 0;
@@ -74,7 +76,7 @@ nav > ul > li {
 }
 
 nav > ul > li > a {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;
     position: relative;
 }
@@ -104,12 +106,12 @@ nav > ul > li > a:hover::after
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid var(--primary-color);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.3em;
-    color: white;
+    color: var(--primary-color);
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
@@ -117,30 +119,49 @@ nav > ul > li > a:hover::after
 
 .btn_logout:hover
 {
-    background: white;
-    color: #162938;
+    background: rgb(0, 128, 75);
+    color: var(--primary-color);
 }
 
 /* Services */
 .overview 
 {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     height: 100%;
-    padding: 10rem 0;
+    margin: 5rem 0 0 0;
+    padding: 5rem;
 }
 
-.overview > h1
+.overview > .container
 {
-    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    justify-content: space-between;
+}
+
+.overview > .container > img
+{
+    margin-left: 200px;
+    margin-top: 18px;
+}
+
+.overview > .container >  h1
+{
+    background-color: var(--primary-color);
     background-size: 100%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: 0;
     margin-bottom: 5rem;
-    font-size: 2.5rem;   
+    font-size: 2.5rem;
+    text-align: center;   
 }
 
 .services_wrapper 
@@ -159,68 +180,75 @@ nav > ul > li > a:hover::after
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #ffffff;
-    background-image: linear-gradient(to right, #00de82 0%, #0059ff 100%);
+    color: var(--primary-color);
+    background-image: linear-gradient(to right, rgb(0, 128, 75) 0%, rgb(0, 47, 128) 100%);
     transition: 0.3s ease-in;
 }
 
-.services_card > h2
+.services_card > a
 {
-    text-align: center; 
+    color: var(--primary-color);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none; 
+    font-weight: 400;
 }
 
-.services_btn 
+.services_card > a:hover
 {
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
+    text-decoration: underline;
 }
 
-.services_btn > button 
-{
-    color: #ffffff;
-    padding: 14px 24px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: #131313;
-    font-size: 1rem;
-}
-
-/* Data */
+/* ---- Data ---- */
 .data_access_section
 {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     height: 100%;
-    padding: 10rem 0;
+    padding: 5rem ;
 }
 
 .data_access_section > h1
 {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    /* color: var(--primary-color); */
     background-size: 100%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     font-size: 2.5rem;
-    text-align: center;  
+    display: flex;
+    justify-content: center; 
+    margin-left: 80px; 
+}
+
+.data_summary > h2
+{
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
 .data_wrapper
 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-area: "workout", "nutrition"
+                "sleep", "weight";
+    gap: 50px;
+    height: 100%;
+    padding: 3rem 0;
 }
 
 .card
 {
-    /* background: rgb(80, 80, 81); */
-    background: rgb(0, 47, 128);
+    background: rgb(0, 128, 75);
+    color: var(--primary-color);
     border-radius: 10px;
     padding: 1.2rem;
     width: 290px;
@@ -234,6 +262,26 @@ nav > ul > li > a:hover::after
 .card:hover
 {
     transform: translateY(-5px);
+}
+
+#workout
+{
+    grid-area: "workout";
+}
+
+#nutrition
+{
+    grid-area: "nutrition";
+}
+
+#sleep
+{
+    grid-area: "sleep";
+}
+
+#weight
+{
+    grid-area: "weight";
 }
 
 .title
@@ -266,36 +314,290 @@ nav > ul > li > a:hover::after
     font-size: 14px;
 }
 
-/* Goals */
+#weekly
+{
+    color: var(--primary-color);
+    margin: 60px 0 10px 10px;
+    display: flex;
+    align-items: start;
+}
+
+.data_graph
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:  30px;
+    margin-top: 20px;
+}
+
+.graph_card
+{
+    background-color: rgb(0, 47, 128);
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba( 0, 0, 0, 0.2);
+}
+
+.graph_title
+{
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workout_bar_chart
+{
+    color: #ffffff;
+}
+
+/* ----- Analytics ----- */
+
+.analytics_section
+{
+    margin: 0;
+    padding: 5rem;
+    background-color: var(--secondary-color);
+    width: 100vw;
+}
+
+.analytics_section > h1
+{
+    background-color: var(--primary-color);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center; 
+}
+
+.data_trends
+{
+    margin: 40px;
+}
+
+.trend_card
+{
+    background-color: #1c1c1c;
+    margin-bottom: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 6px 7px -4px rgba( 0, 0, 0, 0.2);
+
+}
+
+.trend_title
+{
+    color: white;
+}
+
+.insights > h3
+{
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+
+/*----- Goals------ */
 .goals_section
 {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    padding: 10rem 0;
+    width: 100vw;
+    height: max-content;
+    padding: 5rem;
 }
 
-goals_section > h1
+.goals_section > h1
 {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     background-size: 100%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 5rem;
     font-size: 2.5rem;
-    text-align: center;  
+    display: flex;
+    justify-content: center; 
+    margin-left: 80px;
 }
 
+.setup
+{
+    margin: 50px 10px;
+}
+
+form > h2
+{
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+}
+
+.goalbox
+{
+    position: relative;
+    width: 300px;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.goalbox > .icons
+{
+    position: absolute;
+    top: -5px;
+    right: -100px;
+}
+
+.goalbox > label
+{
+    position: absolute;
+    top: 0%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--primary-color);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.goalbox > input
+{
+    width: 400px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: var(--secondary-color);
+    font-weight: 500;
+    padding: 0 35px 0 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: var(--primary-color) solid 2px;
+}
+
+.btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: white;
+    font-weight: 500;
+    
+}
+
+.tracking > h2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.tracking > .tracking_data
+{
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 60px;
+}
+
+.tracking_data > .tracking_card
+{
+    /* margin-left: 15px; */
+    width: 240px;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 4px 4px 16px rgba( 0, 0, 0, 0.05);
+}
+
+.tracking_card > .head
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tracking_card > .head > div > h2
+{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.tracking_card > .head > div > p
+{
+    font-size: 14px;
+}
+
+.tracking .tracking_card .progress {
+    display: block;
+    margin-top: 24px;
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background: rgb(208, 208, 208);
+    overflow-y: hidden;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.tracking .tracking_card .progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgb(0, 128, 75);
+    width: var(--value);
+}
+
+.tracking_card > .label 
+{
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    justify-content: right;
+}
 
 /* Footer */
 footer 
 {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     padding: 50px 0;
     text-align: center;
+    width: 100vw;
 }
 
 footer .container 
@@ -317,11 +619,13 @@ footer .container
 
 .contact-info > h3, .quick-links > h3, .social-media > h3 
 {
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .contact-info > p, .quick-links > ul, .social-media > ul 
 {
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
@@ -336,4 +640,16 @@ footer .container
 
 .social-media > ul > li:last-child {
     margin-right: 0;
+}
+
+.quick-links > ul > li > a
+{
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quick-links > ul > li > a:hover
+{
+    text-decoration: underline;
 }
