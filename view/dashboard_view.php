@@ -26,7 +26,7 @@
                     <li><a href="#">About Us</a></li>
                     <li><a href="../view/dashboard_view.php">Dashboard</a></li>
                     <li><a href="#">Profile</a></li>
-                    <li><a href="#">Activity</a></li>
+                    <li><a href="../view/recommendations_view.php">Activity</a></li>
                 </ul>
             </nav>
             <div class="user-account">
