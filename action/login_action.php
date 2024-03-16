@@ -14,8 +14,6 @@ $password= htmlspecialchars($password, ENT_QUOTES,'UTF-8');
   $result = mysqli_query($conn, $sql);
   if ($result) {
       $row = mysqli_fetch_assoc($result);
-
-      echo "Already in the condition";
   
       if ($row) {
         

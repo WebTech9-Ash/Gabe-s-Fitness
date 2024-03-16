@@ -2,6 +2,17 @@
  include("../setting/connection.php");
  include("../setting/core.php");
  isLogin();
+
+if(isset($_SESSION['LoginFailed']) && $_SESSION['loginFailed'] === true) {
+    echo "<div class='overlay'>
+            <div class='popup'>
+                <p>Wrong passsword password or username! Please try again.</p>
+                <button onclick='closePopupun()'>OK</button>
+            </div>
+          </div>";
+
+    unset($_SESSION["success"]);
+}
 ?>
 
 <!DOCTYPE html>

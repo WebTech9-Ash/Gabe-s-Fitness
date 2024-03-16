@@ -15,8 +15,7 @@ CREATE TABLE Users (
     dob DATE,
     Passwd VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
-    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE (Email)
+    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 
@@ -30,7 +29,7 @@ UNIQUE(TypeName)
 
 -- Gyms Table
 CREATE TABLE Gyms (
-    GymID INT PRIMARY KEY,
+    GymID INT PRIMARY KEY auto_increment,
     GymName VARCHAR(255) NOT NULL,
     OwnerID INT,
     Location VARCHAR(255),
@@ -40,19 +39,21 @@ CREATE TABLE Gyms (
 
 -- Memberships Table
 CREATE TABLE Memberships (
-    MembershipID INT PRIMARY KEY,
+    MembershipID INT PRIMARY KEY auto_increment,
     UserID INT,
     GymID INT,
     JoinDate DATE,
-    MembershipType VARCHAR(255),
+    MembershipType ENUM('VIP', 'Premium', 'Freemium'),
     ExpiryDate DATE,
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
     FOREIGN KEY (GymID) REFERENCES Gyms(GymID)
 );
 
+
+
 -- Trainers Table
 CREATE TABLE Trainers (
-    TrainerID INT PRIMARY KEY,
+    TrainerID INT PRIMARY KEY auto_increment,
     UserID INT,
     GymID INT,
     Specialization VARCHAR(255),
@@ -63,7 +64,7 @@ CREATE TABLE Trainers (
 
 -- Equipment Table
 CREATE TABLE Equipment (
-    EquipmentID INT PRIMARY KEY,
+    EquipmentID INT PRIMARY KEY auto_increment,
     EquipmentName VARCHAR(255) NOT NULL,
     GymID INT,
     PurchaseDate DATE,
@@ -84,7 +85,7 @@ UNIQUE(StatusName)
 
 -- ClassSessions Table
 CREATE TABLE ClassSessions (
-    SessionID INT PRIMARY KEY,
+    SessionID INT PRIMARY KEY auto_increment,
     TrainerID INT,
     ClassName VARCHAR(255) NOT NULL,
     ScheduleStartDateTime DATETIME,
@@ -97,9 +98,8 @@ CREATE TABLE ClassSessions (
 
 -- ClassAttendees Table
 CREATE TABLE ClassAttendees (
-    AttendeeID INT PRIMARY KEY,
-    SessionID INT,
-    UserID INT,
+    SessionID INT PRIMARY KEY,
+    UserID INT ,
     AttendanceDateTime DATETIME,
     FeedbackRating INT,
     FeedbackComment TEXT,
@@ -109,37 +109,64 @@ CREATE TABLE ClassAttendees (
 
 -- EquipmentUsageLog Table
 CREATE TABLE EquipmentUsageLog (
-    LogID INT PRIMARY KEY,
+    LogID INT PRIMARY KEY AUTO_INCREMENT,
     EquipmentID INT,
     UserID INT,
-    SessionID INT,
-    UsageDateTime DATETIME,
+    UsageDateTime  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     Duration INT,
-    Purpose VARCHAR(255),
     FOREIGN KEY (EquipmentID) REFERENCES Equipment(EquipmentID),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID),
-    FOREIGN KEY (SessionID) REFERENCES ClassSessions(SessionID)
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+   
 );
 -- Workout Table
 CREATE TABLE Workouts (
     WorkoutID INT PRIMARY KEY,
-    UserID INT,
     WorkoutName VARCHAR(255) NOT NULL,
     Description TEXT,
-    CreatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+    CreatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- WorkoutExercises Table
-CREATE TABLE WorkoutExercises (
-    ExerciseID INT PRIMARY KEY,
+CREATE TABLE WorkoutSessions(
+    UserID INT ,
+    DateSession  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
     WorkoutID INT,
-    ExerciseName VARCHAR(255) NOT NULL,
     Sets INT,
     Reps INT,
     RestDuration INT,  -- in seconds
-    FOREIGN KEY (WorkoutID) REFERENCES Workouts(WorkoutID)
+    FOREIGN KEY (WorkoutID) REFERENCES Workouts(WorkoutID),
+    PRIMARY KEY(UserID, DateSession)
 );
+-- Nutrition log
+CREATE TABLE NutritionLog (
+    LogID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    LogDate DATE,
+    NutritionDetails TEXT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+-- Sleep log
+CREATE TABLE SleepLog (
+    LogID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    LogDate DATE,
+    SleepDuration TIME,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+-- goals setting 
+CREATE TABLE Goals (
+    GoalID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    GoalType ENUM('Sleep', 'w	Weight', ' calories intake'),
+    TargetDate DATE,
+    Achieved BOOLEAN,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+
+
+
+
 
 ALTER TABLE Users
 ADD COLUMN UserType int;
