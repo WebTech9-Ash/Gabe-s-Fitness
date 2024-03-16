@@ -16,13 +16,13 @@
     </div>
     <nav>
         <ul>
-            <li><a href="homepage.html">Home</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Activity Page</a></li>
-            <li><a href="inventoryMan.html">Equipment Inventory</a></li>
-            <li><a href="ManTrack.html">Member Management</a></li>
-            <li><a href="profile.html">Profile Page</a></li>
-            <li><a href="#">Log Out</a></li>
+                    <li><a href="../view/homepage.php">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="../view/dashboard_view.php">Dashboard</a></li>
+                    <li><a href="../view/profile.php">Profile</a></li>
+                    <li><a href="../view/ManTrack.php">Tracker</a></li>
+                    <li><a href="../view/inventoryManagement.php">Profile</a></li>
+                    <li><a href="../view/recommendations_view.php">Activity</a></li>
         </ul>
     </nav>
     <img src="moon.png" id="toggle" alt="sun" onclick="toggleColorScheme()">

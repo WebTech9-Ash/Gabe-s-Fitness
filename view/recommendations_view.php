@@ -18,13 +18,15 @@
             <div class="container">
                 <a href="#" class="logo"><img src="../assets/logo (2).png" id="logo" alt="logo"></a>
                 <nav>
-                    <ul>
-                        <li><a href="../view/homepage.php">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="../view/dashboard_view.php">Dashboard</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="../view/recommendations_view.php">Activity</a></li>
-                    </ul>
+                <ul>
+                    <li><a href="../view/homepage.php">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="../view/dashboard_view.php">Dashboard</a></li>
+                    <li><a href="../view/profile.php">Profile</a></li>
+                    <li><a href="../view/ManTrack.php">Tracker</a></li>
+                    <li><a href="../view/inventoryManagement.php">Profile</a></li>
+                    <li><a href="../view/recommendations_view.php">Activity</a></li>
+        </ul>
                 </nav>
                 <div class="user-account">
                     <button class="btn_logout" id="btn_logout">Log out</button>
