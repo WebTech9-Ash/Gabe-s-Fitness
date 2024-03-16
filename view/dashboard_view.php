@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
-<body class="dark-mode">
+<body class="light-mode">
     <div class="main_container">
     <header>
         <!-- header and navigation bar -->
         <div class="container">
-            <a href="#" class="logo"><img src="../assets/logo (2).png" id="logo" alt="logo"></a>
+            <a href="#" class="logo"><img src="../assets/blogo.png" id="logo" alt="logo"></a>
             <nav>
                 <ul>
                     <li><a href="../view/homepage.php">Home</a></li>
@@ -41,7 +41,7 @@
         <div class="container">
             <h1>Our Services</h1>
             <br>
-            <img src="../assets/sun.png" id="toggle" alt="sun" width="30px" height="30px" onclick="toggleColorScheme()">
+            <img src="../assets/moon.png" id="toggle" alt="sun" width="30px" height="30px" onclick="toggleColorScheme()">
         </div>
         <div class="services_wrapper">
             <div class="services_card">

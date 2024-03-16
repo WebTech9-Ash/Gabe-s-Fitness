@@ -13,7 +13,7 @@
 
 <header>
     <div class="logo-container">
-        <a href="#" class="logo"><img src="blogo.png" id="logo"></a>
+        <a href="#" class="logo"><img src="../assets/blogo.png" id="logo"></a>
     </div>
     <nav>
     <ul>
@@ -26,7 +26,7 @@
                     <li><a href="../view/recommendations_view.php">Activity</a></li>
         </ul>
     </nav>
-    <img src="moon.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
+    <img src="../assets/moon.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
 </header>
 
 <div class="container">

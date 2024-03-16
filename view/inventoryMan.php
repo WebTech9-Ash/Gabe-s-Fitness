@@ -12,7 +12,7 @@
 
 <header>
     <div class="logo-container">
-        <a href="#" class="logo"><img src="blogo.png" id="logo"></a>
+        <a href="#" class="logo"><img src="../assets/blogo.png" id="logo"></a>
     </div>
     <nav>
         <ul>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/recommendations.css">
 </head>
 
-<body class="dark-mode">
+<body class="light-mode">
     <div class="main_container">
         <header>
             <!-- header and navigation bar -->
@@ -39,7 +39,7 @@
             <div class="title_container">
                 <h1>Lifestyle Recommendations</h1>
                 <div>
-                    <img src="../assets/sun.png" id="toggle" alt="sun" width="30px" height="30px" onclick="toggleColorScheme()">
+                    <img src="../assets/moon.png" id="toggle" alt="sun" width="30px" height="30px" onclick="toggleColorScheme()">
                 </div>
             </div>
 
