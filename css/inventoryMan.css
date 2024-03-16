@@ -101,3 +101,67 @@ table td {
 table th {
     background-color: #f2f2f2;
 }
+
+* Footer */
+footer 
+{
+    background-color: var(--secondary-color);
+    padding: 50px 0;
+    text-align: center;
+    width: 100vw;
+}
+
+footer .container 
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-info, .quick-links, .social-media 
+{
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.quick-links > ul > li
+{
+    list-style: none;
+}
+
+.contact-info > h3, .quick-links > h3, .social-media > h3 
+{
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-info > p, .quick-links > ul, .social-media > ul 
+{
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.quick-links > ul > li {
+    margin-bottom: 5px;
+}
+
+.social-media > ul > li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media > ul > li:last-child {
+    margin-right: 0;
+}
+
+.quick-links > ul > li > a
+{
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quick-links > ul > li > a:hover
+{
+    text-decoration: underline;
+}
+

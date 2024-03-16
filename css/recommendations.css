@@ -259,16 +259,16 @@ nav > ul > li > a:hover::after
 {
     scroll-snap-align: start;
 }
-
-/* footer section */
+* Footer */
 footer 
 {
+    background-color: var(--secondary-color);
     padding: 50px 0;
     text-align: center;
     width: 100vw;
 }
 
-footer .footer_container 
+footer .container 
 {
     display: flex;
     justify-content: space-between;
@@ -312,6 +312,7 @@ footer .footer_container
 
 .quick-links > ul > li > a
 {
+    color: var(--primary-color);
     text-decoration: none;
     cursor: pointer;
 }
