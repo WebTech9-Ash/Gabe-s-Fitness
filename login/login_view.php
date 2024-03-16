@@ -1,8 +1,10 @@
 <?php
+
  include("../setting/connection.php");
  include("../setting/core.php");
  isLogin();
 
+session_start();
 if(isset($_SESSION['LoginFailed']) && $_SESSION['loginFailed'] === true) {
     echo "<div class='overlay'>
             <div class='popup'>
