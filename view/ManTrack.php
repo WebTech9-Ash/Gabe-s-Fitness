@@ -26,7 +26,7 @@
                     <li><a href="../view/recommendations_view.php">Activity</a></li>
         </ul>
     </nav>
-    <img src="..assets/moon.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
+    <img src="../assets/moon.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
 </header>
 
 <div class="container">
