@@ -64,12 +64,5 @@ function closePopupun() {
 
 }
 
-function closePopupdeux() {
-    window.location.href = "../login/register_view.php";
-    $(".overlay").remove();
-    
-    
-
-}
 
 

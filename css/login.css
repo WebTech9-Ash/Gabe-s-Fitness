@@ -287,7 +287,6 @@ header
 {
     text-decoration: underline;
 }
-
 .overlay {
     display: flex;
     align-items: center;
@@ -314,6 +313,8 @@ margin-top: 10px;
 cursor: pointer;
 background-color:  var(--secondary-color);;
    }
+
+   
 
 @media screen and (max-width: 960px) 
 {
