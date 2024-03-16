@@ -85,8 +85,8 @@
                         if(isset($_SESSION['loginFailed']) && $_SESSION['loginFailed'] === true) {
 
 
-                            
-                            echo"<p style = 'color:red'> wrong password or username !<\p>";
+
+                            echo"<p style = 'color:red'> wrong password or username !";
     
 
                             unset($_SESSION["loginFailed"]);
