@@ -1,0 +1,103 @@
+* {
+    font-family: "Manrope";
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.inventory-section,
+.usage-section,
+.maintenance-section {
+    margin-bottom: 40px;
+}
+
+.inventory-section h2,
+.usage-section h2,
+.maintenance-section h2 {
+    color: green;
+}
+
+.inventory-section form,
+.usage-section form,
+.maintenance-section form {
+    margin-bottom: 20px;
+}
+
+.inventory-section form label,
+.usage-section form label,
+.maintenance-section form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.inventory-section form input,
+.usage-section form input,
+.maintenance-section form input,
+.inventory-section form select,
+.usage-section form select,
+.maintenance-section form select {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.inventory-section form button,
+.usage-section form button,
+.maintenance-section form button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,89 @@
+* {
+    font-family: "Manrope";
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column; 
+}
+
+
+.management-section,
+.attendance-section {
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
+    margin-bottom: 20px; /* Added margin-bottom */
+}
+
+
+.management-section form,
+.attendance-section form {
+    margin-bottom: 20px;
+}
+
+.management-section form label,
+.attendance-section form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.management-section form input,
+.attendance-section form input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.management-section form button,
+.attendance-section form button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.member-profile,
+.attendance-record {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
