@@ -47,6 +47,7 @@ header
     left: 0;
     width: 100%;
     padding: 20px 100px;
+    font-size: 17px;
     background: transparent;
     backdrop-filter: blur(50px); 
     display: flex;

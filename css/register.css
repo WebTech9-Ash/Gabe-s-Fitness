@@ -48,6 +48,7 @@ header
     width: 100%;
     padding: 20px 100px;
     background: transparent;
+    font-size: 17px;
     backdrop-filter: blur(50px); 
     display: flex;
     justify-content: space-between;
