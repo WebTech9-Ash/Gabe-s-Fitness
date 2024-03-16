@@ -11,7 +11,7 @@ if(isset($_SESSION['LoginFailed']) && $_SESSION['loginFailed'] === true) {
             </div>
           </div>";
 
-    unset($_SESSION["success"]);
+    unset($_SESSION["loginFailed"]);
 }
 ?>
 
