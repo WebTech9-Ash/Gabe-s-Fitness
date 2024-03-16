@@ -6,7 +6,7 @@
     <title>Equipment Management</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="inventoryMan.css">
+    <link rel="stylesheet" href="../css/inventoryMan.css">
 </head>
 <body class="light-mode">
 
