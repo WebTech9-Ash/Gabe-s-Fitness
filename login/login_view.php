@@ -3,18 +3,6 @@
  include("../setting/connection.php");
  include("../setting/core.php");
  isLogin();
-
-session_start();
-if(isset($_SESSION['LoginFailed']) && $_SESSION['loginFailed'] === true) {
-    echo "<div class='overlay'>
-            <div class='popup'>
-                <p>Wrong passsword password or username! Please try again.</p>
-                <button onclick='closePopupun()'>OK</button>
-            </div>
-          </div>";
-
-    unset($_SESSION["loginFailed"]);
-}
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +35,22 @@ if(isset($_SESSION['LoginFailed']) && $_SESSION['loginFailed'] === true) {
     </header>
     
     <div class="form_container">
+
+    <?php
+
+if(isset($_SESSION['loginFailed']) && $_SESSION['loginFailed'] === true) {
+    echo "<div class='overlay'>
+            <div class='popup'>
+                <p>Wrong passsword password or username! Please try again.</p>
+                <button onclick='closePopupun()'>OK</button>
+            </div>
+          </div>";
+
+    unset($_SESSION["loginFailed"]);
+}
+
+
+    ?>
         <span class="close_icon">
             <ion-icon name="close"></ion-icon>
         </span>
