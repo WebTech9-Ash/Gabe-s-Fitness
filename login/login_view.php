@@ -3,17 +3,6 @@
  include("../setting/connection.php");
  include("../setting/core.php");
  isLogin();
-
- if(isset($_SESSION['loginFailed']) && $_SESSION['loginFailed'] === true) {
-    echo "<div class='overlay'>
-            <div class='popup'>
-                <p>Wrong passsword password or username! Please try again.</p>
-                <button onclick='closePopupun()'>OK</button>
-            </div>
-          </div>";
-
-    unset($_SESSION["loginFailed"]);
-}
 ?>
 
 <!DOCTYPE html>
@@ -87,6 +76,19 @@
                     <!-- register page link -->
                     <p> 
                         Don't have an account?
+                        <?php
+                        if(isset($_SESSION['loginFailed']) && $_SESSION['loginFailed'] === true) {
+
+
+                            echo"<p style = 'font-color :red'>wrong password or username !<\p>";
+    
+
+                            unset($_SESSION["loginFailed"]);
+                        }
+
+
+                        ?>
+                        
                         <a href="register_view.php" class="reigster_link">Register Now</a>
                     </p>
                 </div>

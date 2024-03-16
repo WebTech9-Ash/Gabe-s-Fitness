@@ -56,13 +56,5 @@ function toggleColorScheme()
         }
 }
 
-function closePopupun() {
-    window.location.href = "../login/login_view.php";
-    $(".overlay").remove();
-    
-
-
-}
-
 
 
