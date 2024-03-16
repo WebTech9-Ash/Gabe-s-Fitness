@@ -76,11 +76,17 @@
                     <!-- register page link -->
                     <p> 
                         Don't have an account?
-                        <?php
+                        
+                        
+                        <a href="register_view.php" class="reigster_link">Register Now</a>
+                    </p>
+
+                    <?php
                         if(isset($_SESSION['loginFailed']) && $_SESSION['loginFailed'] === true) {
 
 
-                            echo"<p style = 'font-color :red'>wrong password or username !<\p>";
+                            
+                            echo"<p style = 'color:red'> wrong password or username !<\p>";
     
 
                             unset($_SESSION["loginFailed"]);
@@ -88,9 +94,6 @@
 
 
                         ?>
-                        
-                        <a href="register_view.php" class="reigster_link">Register Now</a>
-                    </p>
                 </div>
                 
             </form>
