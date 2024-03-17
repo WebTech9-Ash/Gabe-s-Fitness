@@ -3,7 +3,7 @@
 include '../setting/connection.php';
 
 // Check if the form is submitted
-if (isset($_POST['edit-class-id'])) {
+if (isset($_POST['confirm-edit'])) {
     // Get the POST data
     $classType = $_POST['classType'];
     $className = $_POST['className'];

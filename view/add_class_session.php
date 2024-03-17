@@ -32,7 +32,7 @@
     <!-- Class Session Management Section -->
     <div class="management-section">
         <h2 style="color: green">Class Session Management</h2>
-        <form id="class-session-form">
+        <form id="class-session-form" action="../action/add_class_session_action.php" method="post">
             <label for="class-type">Class Type:</label>
             <select id="class-type" name="class-type">
                 <option value="Cardio">Cardio</option>
@@ -52,24 +52,24 @@
             <label for="description">Description:</label>
             <textarea id="description" name="description"></textarea>
             <br>
-            <button id="add-class-session">Add Class Session</button>
+            <button type="submit" name = "add-class-session" id="add-class-session">Add Class Session</button>
         </form>
 
         <!-- Display created class sessions -->
         <div id="class-sessions-list"></div>
 
         <!-- Edit Class Session Form -->
-        <form id="edit-form" action="../actions/edit_class_session_action.php" method="post">
+        <form id="edit-form" action="../action/edit_class_session_action.php" method="post">
             <h2 style="color: blue;">Edit Class Session</h2>
             <label for="edit-class-id">Class ID:</label>
             <input type="text" id="edit-class-id" name="edit-class-id" readonly>
             <!-- Add fields to edit -->
-            <button type="submit" id="confirm-edit">Confirm Edit</button>
+            <button type="submit" name = "confirm-edit" id="confirm-edit">Confirm Edit</button>
             <button type="button" id="cancel-edit">Cancel</button>
         </form>
 
         <!-- Delete Class Session Form -->
-        <form id="delete-form" action="../actions/delete_class_session_action.php" method="post">
+        <form id="delete-form" action="../action/delete_class_session_action.php" method="post">
             <h2 style="color: red;">Delete Class Session</h2>
             <label for="delete-class-id">Class ID:</label>
             <input type="text" id="delete-class-id" name="delete-class-id" readonly>
@@ -166,31 +166,6 @@
             classSessionsList.appendChild(classSessionElement);
         });
     }
-
-    // Sample class sessions data (replace with actual data from server)
-    const sampleClassSessions = [
-        {
-            id: 1,
-            classType: 'Cardio',
-            className: 'Morning Cardio Blast',
-            startTime: '08:00 AM',
-            endTime: '09:00 AM',
-            maxCapacity: 20,
-            description: 'A high-intensity cardio workout to start your day!'
-        },
-        {
-            id: 2,
-            classType: 'Strength Training',
-            className: 'Total Body Sculpt',
-            startTime: '10:00 AM',
-            endTime: '11:00 AM',
-            maxCapacity: 15,
-            description: 'A full-body strength training session for all fitness levels.'
-        }
-    ];
-
-    // Display sample class sessions on page load
-    displayClassSessions(sampleClassSessions);
 
     // Class Session Management Functionality
     document.getElementById('add-class-session').addEventListener('click', function(event) {
