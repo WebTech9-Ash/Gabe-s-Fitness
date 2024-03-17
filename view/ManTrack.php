@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,48 +8,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/ManTrack.css">
 </head>
-<body class="dark-mode">
+<body class="light-mode">
 
 <header>
     <div class="logo-container">
-        <a href="../view/homepage.php" class="logo"><img src="../assets/logo (2).png" id="logo"></a>
+        <a href="../view/homepage.php" class="logo"><img src="../assets/blogo.png" id="logo"></a>
     </div>
     <nav>
         
         <ul>
                     <li><a href="../view/homepage.php">Home</a></li>
-                    <li><a href="../view/about_view.php">About Us</a></li>
+                    <li><a href="#">About Us</a></li>
                     <li><a href="../view/dashboard_view.php">Dashboard</a></li>
                     <li><a href="../view/profile.php">Profile</a></li>
                     <li><a href="../view/ManTrack.php">Tracker</a></li>
                     <li><a href="../view/inventoryMan.php">Inventory</a></li>
-                    <li><a href="../view/recommendations_view.php">Reccomendations</a></li>
+                    <li><a href="../view/recommendations_view.php">Activity</a></li>
         </ul>
     </nav>
-    <div class="user-account">
-        <button class="btn_logout" id="btn_logout">Log out</button>
-    </div>
-    <img src="../assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
+    <img src="../assets/moon.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
 </header>
 
 <div class="container">
     <!-- Member Management Section -->
     <div class="management-section">
         <h2 style="color: green">Member Management</h2>
-        <form id="member-form">
-            <label for="member-name">Name:</label>
-            <input type="text" id="member-name" name="member-name">
+        <form id="member-form" action="../action/gym_membership_action.php" method="POST">
+            <label for="member-id">Name:</label>
+            <input type="text" id="member-id" name="member-id">
             <label for="member-email">Email:</label>
             <input type="email" id="member-email" name="member-email">
-            <label for="member-phone">Phone:</label>
-            <input type="tel" id="member-phone" name="member-phone">
+            <label for="member-password">Password:</label><input type="password" id="member-password" name="member-password">
+            <!--<label for="member-phone">Phone:</label>
+            <input type="tel" id="member-phone" name="member-phone">-->
+            <label for="gym">Select Gym:</label>
+            <?php include '../action/gym_select.php'; ?>
+            <label for="member-plan">Membership Plan:</label>
+            <select id="member-plan" name="member-plan">
+                <option value="">Choose a plan</option>
+                <option value="Option1">VIP</option>
+                <option value="Option1">Premium</option>
+                <option value="Option1">Freemium</option>
+            </select>
             <br>
             <button id="register-member">Register</button>
         </form>
         <div id="member-list">
             <!-- Member profiles will be displayed here -->
-        </div>
     </div>
+</div>
+
 
     <!-- Attendance Tracking Section -->
     <div class="attendance-section">
@@ -99,17 +103,12 @@
                     </li>
                     <li>
                         <a href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" width="25" height="25">
-                                <path d="M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z" fill="rgb(0, 47, 128)"/>
-                            </svg>
+                            <ion-icon name="logo-twitter" style="width:25px; height:23px; color:rgb(0, 47, 128);"></ion-icon>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" width="25" height="25">
-                                <path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z" fill="rgb(0, 47, 128)"/>
-                                <path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z" fill="rgb(0, 47, 128)"/>
-                            </svg>
+                            <ion-icon name="logo-instagram" style="width:25px; height:23px; color:rgb(0, 47, 128);"></ion-icon>
                         </a>
                     </li>
                 </ul>
@@ -120,9 +119,73 @@
         <p>&copy; <?php echo date("Y"); ?> Gabe's Fitness. All rights reserved.</p>
     </footer>
 
-<script src="../js/mantrack.js"> </script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    function toggleColorScheme() {
+        const body = document.body;
+        body.classList.toggle('light-mode');
+        body.classList.toggle('dark-mode');
+
+         // Toggle logo image source
+         const logo = document.getElementById('logo');
+        if (body.classList.contains('dark-mode')) {
+            logo.src = 'logo (2).png'; // Change to dark mode logo
+            document.getElementById('toggle').src = 'sun.png'; // Change toggle image to moon
+        } else {
+            logo.src = 'blogo.png'; // Change back to light mode logo
+            document.getElementById('toggle').src = 'moon.png'; // Change toggle image to sun
+        }
+    }
+    // Member Management Functionality
+    document.getElementById('register-member').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get member details from the form
+        const name = document.getElementById('member-name').value;
+        const email = document.getElementById('member-email').value;
+        const phone = document.getElementById('member-phone').value;
+
+        // Create a new member profile
+        const memberProfile = document.createElement('div');
+        memberProfile.classList.add('member-profile');
+        memberProfile.innerHTML = `
+            <p>Name: ${name}</p>
+            <p>Email: ${email}</p>
+            <p>Phone: ${phone}</p>
+            <button class="update-member">Update</button>
+            <button class="cancel-membership">Cancel Membership</button>
+        `;
+
+        // Append the new member profile to the member list
+        document.getElementById('member-list').appendChild(memberProfile);
+
+        // Clear the form fields
+        document.getElementById('member-name').value = '';
+        document.getElementById('member-email').value = '';
+        document.getElementById('member-phone').value = '';
+    });
+
+    // Attendance Tracking Functionality
+    document.getElementById('record-attendance').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get member ID from the form
+        const memberId = document.getElementById('member-id').value;
+
+        // Record the attendance for the member with the given ID
+        const attendanceRecord = document.createElement('div');
+        attendanceRecord.classList.add('attendance-record');
+        attendanceRecord.innerHTML = `
+            <p>Member ID: ${memberId}</p>
+            <p>Attendance Recorded</p>
+        `;
+
+        // Append the attendance record to the attendance report
+        document.getElementById('attendance-report').appendChild(attendanceRecord);
+
+        // Clear the member ID field
+        document.getElementById('member-id').value = '';
+    });
+</script>
+
 </body>
 </html>
