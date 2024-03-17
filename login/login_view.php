@@ -19,7 +19,7 @@
 
 <body class="dark-mode">
     <header> 
-        <img src="../assets/logo (2).png" id="logo" alt="logo">
+        <img src="../assets/logo.png" id="logo" alt="logo">
 
         <div class="navbar_toggle" id="mobile_menu">
             <span class="bar"></span> 
