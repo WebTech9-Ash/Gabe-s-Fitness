@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/recommendations.css">
 </head>
 
-<body class="light-mode">
+<body class="dark-mode">
     <div class="main_container">
         <header>
             <!-- header and navigation bar -->
