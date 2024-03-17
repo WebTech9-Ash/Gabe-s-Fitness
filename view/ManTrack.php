@@ -18,12 +18,11 @@
         
         <ul>
                     <li><a href="../view/homepage.php">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="../view/about_view.php">About Us</a></li>
                     <li><a href="../view/dashboard_view.php">Dashboard</a></li>
                     <li><a href="../view/profile.php">Profile</a></li>
                     <li><a href="../view/ManTrack.php">Tracker</a></li>
-                    <li><a href="../view/inventoryMan.php">Inventory</a></li>
-                    <li><a href="../view/recommendations_view.php">Activity</a></li>
+                    <li><a href="../view/recommendations_view.php">Recommendations</a></li>
         </ul>
     </nav>
     <img src="../assets/moon.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
@@ -51,7 +50,7 @@
                 <option value="Option1">Freemium</option>
             </select>
             <br>
-            <button id="register-member">Register</button>
+            <input id="register-member" type="submit" value="Register">
         </form>
         <div id="member-list">
             <!-- Member profiles will be displayed here -->
@@ -137,7 +136,7 @@
     }
     // Member Management Functionality
     document.getElementById('register-member').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent form submission
+        //event.preventDefault();
 
         // Get member details from the form
         const name = document.getElementById('member-name').value;

@@ -19,7 +19,7 @@ isNotLogin();
 <body class="dark-mode">
     <header>
         <div class="container">
-            <a class="logo"><img src="../assets/logo (2).png" id="logo" alt="logo"></a>
+            <a class="logo"><img src="../assets/logo.png" id="logo" alt="logo"></a>
             <nav>
                 <ul>
                     <li><a href="../view/homepage.php">Home</a></li>

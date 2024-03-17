@@ -13,7 +13,7 @@
 
 <header>
     <div class="logo-container">
-        <a href="../view/homepage.php" class="logo"><img src="../assets/logo (2).png" id="logo"></a>
+        <a href="../view/homepage.php" class="logo"><img src="../assets/logo.png" id="logo"></a>
     </div>
     <nav>
         <ul>
@@ -22,8 +22,7 @@
             <li><a href="../view/dashboard_view.php">Dashboard</a></li>
             <li><a href="../view/profile.php">Profile</a></li>
             <li><a href="../view/ManTrack.php">Tracker</a></li>
-            <li><a href="../view/inventoryMan.php">Inventory</a></li>
-            <li><a href="../view/recommendations_view.php">Activity</a></li>
+            <li><a href="../view/recommendations_view.php">Recommendations</a></li>
         </ul>
     </nav>
     <div class="user-account">

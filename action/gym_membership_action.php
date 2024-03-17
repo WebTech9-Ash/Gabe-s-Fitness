@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once 'connection.php';
+    include '../setting/connection.php';
 
     $memberId = $_POST['member-id'];
     $memberEmail = $_POST['member-email'];

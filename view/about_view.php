@@ -16,13 +16,13 @@
     <div class="main_container">
         <header>
             <div class="container">
-                <a href="#" class="logo"><img src="../assets/logo (2).png" id="logo" alt="logo"></a>
+                <a href="#" class="logo"><img src="../assets/logo.png" id="logo" alt="logo"></a>
                 <nav>
                     <ul>
                         <li><a href="../view/homepage.php">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="../view/about_view.php">About Us</a></li>
                         <li><a href="../view/dashboard_view.php">Dashboard</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="../view/profile.php">Profile</a></li>
                         <li><a href="../view/recommendations_view.php">Activity</a></li>
                     </ul>
                 </nav>
