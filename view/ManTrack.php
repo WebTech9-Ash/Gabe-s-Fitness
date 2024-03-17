@@ -26,6 +26,9 @@
                     <li><a href="../view/recommendations_view.php">Recommendations</a></li>
         </ul>
     </nav>
+    <div class="user-account">
+        <button class="btn_logout" id="btn_logout">Log out</button>
+    </div>
     <img src="../assets/moon.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
 </header>
 
