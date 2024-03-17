@@ -2,10 +2,9 @@
 // Include your database connection file
 include '../setting/connection.php';
 
-// Check if the request method is POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// Check if the form is submitted
+if (isset($_POST['edit-class-id'])) {
     // Get the POST data
-    $sessionId = $_POST['sessionId']; 
     $classType = $_POST['classType'];
     $className = $_POST['className'];
     $startTime = $_POST['startTime'];
@@ -13,25 +12,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $maxCapacity = $_POST['maxCapacity'];
     $description = $_POST['description'];
 
-    // Prepare SQL statement to update data in the database
-    $sql = "UPDATE class_sessions 
-            SET class_type='$classType', class_name='$className', start_time='$startTime', end_time='$endTime', 
-                max_capacity='$maxCapacity', description='$description' 
-            WHERE id='$sessionId'";
+    // Prepare SQL statement to insert data into the database
+    $sql = "INSERT INTO ClassSessions (class_type, class_name, start_time, end_time, max_capacity, description) 
+            VALUES (?, ?, ?, ?, ?, ?)";
 
-    // Execute the SQL statement
-    if (mysqli_query($conn, $sql)) {
-        // Return a success message (you can customize this as needed)
-        $response = array('success' => true, 'message' => 'Class session updated successfully.');
+    // Prepare the statement
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "ssssss", $classType, $className, $startTime, $endTime, $maxCapacity, $description);
+
+    // Execute the statement
+    if (mysqli_stmt_execute($stmt)) {
+        // Return a success message
+        $response = array('success' => true, 'message' => 'Class session added successfully.');
         echo json_encode($response);
     } else {
-        // Return an error message if update fails
-        $response = array('success' => false, 'message' => 'Error updating class session: ' . mysqli_error($conn));
+        // Return an error message if insertion fails
+        $response = array('success' => false, 'message' => 'Error adding class session: ' . mysqli_error($conn));
         echo json_encode($response);
     }
+
+    // Close the prepared statement
+    mysqli_stmt_close($stmt);
 } else {
-    // Return an error message if the request method is not POST
-    $response = array('success' => false, 'message' => 'Invalid request method.');
+    // Return an error message if the form is not submitted
+    $response = array('success' => false, 'message' => 'Form not submitted.');
     echo json_encode($response);
 }
 

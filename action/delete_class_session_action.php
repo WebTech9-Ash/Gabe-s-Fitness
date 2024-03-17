@@ -1,31 +1,35 @@
 <?php
-// Include your database connection file
-include '../setting/connection.php';
+// Include the connection file
+include "../setting/connection.php";
 
-// Check if the request method is POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the POST data
-    $SessionID = $_POST['SessionID']; 
+// Check for the GET URL parameter
+if (isset($_GET['id'])) {
+    // Retrieve the class session ID from the GET URL
+    $sessionId = $_GET['id'];
 
-    // Prepare SQL statement to delete data from the database
-    $sql = "DELETE FROM ClassSessions WHERE id='$SessionID'";
+    // Write the DELETE query using the connection from the connection file
+    $deleteQuery = "DELETE FROM ClassSessions WHERE id = ?";
 
-    // Execute the SQL statement
-    if (mysqli_query($conn, $sql)) {
-        // Return a success message (you can customize this as needed)
-        $response = array('success' => true, 'message' => 'Class session deleted successfully.');
-        echo json_encode($response);
+    // Prepare the delete statement
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $sessionId);
+
+    // Execute the statement
+    if ($stmt->execute()) {
+        // Redirect to the class session display page
+        header("Location: ../view/add_class_session.php");
+        exit();
     } else {
-        // Return an error message if deletion fails
-        $response = array('success' => false, 'message' => 'Error deleting class session: ' . mysqli_error($conn));
-        echo json_encode($response);
+        // Display error on class session display page if deletion fails
+        echo "Error: " . $stmt->error;
+        // You may redirect to class session display page with an error message if needed
     }
-} else {
-    // Return an error message if the request method is not POST
-    $response = array('success' => false, 'message' => 'Invalid request method.');
-    echo json_encode($response);
-}
 
-// Close the database connection
-mysqli_close($conn);
+    // Close the prepared statement
+    $stmt->close();
+} else {
+    // Redirect to class session display page if class session ID is not provided
+    header("Location: ../view/add_class_session.php");
+    exit();
+}
 ?>

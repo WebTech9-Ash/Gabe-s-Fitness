@@ -2,36 +2,51 @@
 // Include your database connection file
 include '../setting/connection.php';
 
-// Check if the request method is POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get the POST data
-    $classType = $_POST['ClassType'];
-    $className = $_POST['ClassName'];
-    $startTime = $_POST['StartTime'];
-    $endTime = $_POST['EndTime'];
-    $maxCapacity = $_POST['MaxCapacity'];
-    $description = $_POST['Description'];
+if (isset($_POST['add-class-session'])) {
+    // Collect form data and store in variables
+    $classType = $_POST['class-type'];
+    $className = $_POST['class-name'];
+    $startTime = $_POST['start-time'];
+    $endTime = $_POST['end-time'];
+    $maxCapacity = $_POST['max-capacity'];
+    $description = $_POST['description'];
 
-    // Prepare SQL statement to insert data into the database
-    $sql = "INSERT INTO ClassSessions (class_type, class_name, start_time, end_time, max_capacity, description) 
-            VALUES ('$ClassType', '$ClassName', '$StartTime', '$EndTime', '$MaxCapacity', '$Description')";
+    // Prepare and execute SQL statement to check if the class session already exists
+    $checkDuplicateQuery = "SELECT COUNT(*) as count FROM ClassSessions WHERE class_name = ?";
+    $stmtCheck = $conn->prepare($checkDuplicateQuery);
+    $stmtCheck->bind_param("s", $className);
+    $stmtCheck->execute();
+    $resultCheck = $stmtCheck->get_result();
+    $rowCheck = $resultCheck->fetch_assoc();
+    $stmtCheck->close();
 
-    // Execute the SQL statement
-    if (mysqli_query($conn, $sql)) {
-        // Return a success message (you can customize this as needed)
-        $response = array('success' => true, 'message' => 'Class session added successfully.');
-        echo json_encode($response);
-    } else {
-        // Return an error message if insertion fails
-        $response = array('success' => false, 'message' => 'Error adding class session: ' . mysqli_error($conn));
-        echo json_encode($response);
+    if ($rowCheck['count'] > 0) {
+        // Redirect back to the form with a duplicate class session message
+        header("Location: ../view/class_session.php?msg=duplicate");
+        exit();
     }
-} else {
-    // Return an error message if the request method is not POST
-    $response = array('success' => false, 'message' => 'Invalid request method.');
-    echo json_encode($response);
-}
 
-// Close the database connection
-mysqli_close($conn);
+    // Proceed to insert the class session if it doesn't exist
+    $insertQuery = "INSERT INTO ClassSessions (class_type, class_name, start_time, end_time, max_capacity, description) 
+                    VALUES (?, ?, ?, ?, ?, ?)";
+    $stmtInsert = $conn->prepare($insertQuery);
+    $stmtInsert->bind_param("ssssss", $classType, $className, $startTime, $endTime, $maxCapacity, $description);
+
+    if ($stmtInsert->execute()) {
+        // Redirect back to the class session page after a successful add
+        header("Location: ../view/add_class_session.php");
+        exit();
+    } else {
+        // Redirect back to the form with an error message
+        header("Location: ../view/add_class_session.php?msg=error");
+        exit();
+    }
+
+    // Close the prepared statements
+    $stmtInsert->close();
+} else {
+    // Redirect back to the form if the form was not submitted
+    header("Location: ../view/add_class_session.php?msg=error");
+    exit();
+}
 ?>

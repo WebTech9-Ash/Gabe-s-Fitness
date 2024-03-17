@@ -7,11 +7,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/ManTrack.css">
-    <style>
-        #edit-form {
-            display: none;
-        }
-    </style>
 </head>
 <body class="light-mode">
 
@@ -58,34 +53,29 @@
             <textarea id="description" name="description"></textarea>
             <br>
             <button id="add-class-session">Add Class Session</button>
-            <button id="delete-class-session">Delete Class Session</button>
-            <button id="edit-class-session">Edit Class Session</button>
         </form>
-        
+
+        <!-- Display created class sessions -->
+        <div id="class-sessions-list"></div>
+
         <!-- Edit Class Session Form -->
-        <form id="edit-form">
+        <form id="edit-form" action="../actions/edit_class_session_action.php" method="post">
             <h2 style="color: blue;">Edit Class Session</h2>
-            <label for="edit-class-type">Class Type:</label>
-            <select id="edit-class-type" name="edit-class-type">
-                <option value="Cardio">Cardio</option>
-                <option value="Strength Training">Strength Training</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Pilates">Pilates</option>
-                <option value="Zumba">Zumba</option>
-            </select>
-            <label for="edit-class-name">Class Name:</label>
-            <input type="text" id="edit-class-name" name="edit-class-name">
-            <label for="edit-start-time">Start Time:</label>
-            <input type="datetime-local" id="edit-start-time" name="edit-start-time">
-            <label for="edit-end-time">End Time:</label>
-            <input type="datetime-local" id="edit-end-time" name="edit-end-time">
-            <label for="edit-max-capacity">Max Capacity:</label>
-            <input type="number" id="edit-max-capacity" name="edit-max-capacity" min="1">
-            <label for="edit-description">Description:</label>
-            <textarea id="edit-description" name="edit-description"></textarea>
-            <br>
-            <button id="save-edit">Save Changes</button>
-            <button id="cancel-edit">Cancel</button>
+            <label for="edit-class-id">Class ID:</label>
+            <input type="text" id="edit-class-id" name="edit-class-id" readonly>
+            <!-- Add fields to edit -->
+            <button type="submit" id="confirm-edit">Confirm Edit</button>
+            <button type="button" id="cancel-edit">Cancel</button>
+        </form>
+
+        <!-- Delete Class Session Form -->
+        <form id="delete-form" action="../actions/delete_class_session_action.php" method="post">
+            <h2 style="color: red;">Delete Class Session</h2>
+            <label for="delete-class-id">Class ID:</label>
+            <input type="text" id="delete-class-id" name="delete-class-id" readonly>
+            <p>Are you sure you want to delete this class session?</p>
+            <button type="submit" name="confirm-delete" id="confirm-delete">Confirm Delete</button>
+            <button type="button" id="cancel-delete">Cancel</button>
         </form>
     </div>
 </div>
@@ -150,6 +140,58 @@
         }
     }
     
+    // Function to create a class session element
+    function createClassSessionElement(classSession) {
+        const classSessionElement = document.createElement('div');
+        classSessionElement.classList.add('class-session');
+        classSessionElement.innerHTML = `
+            <h3>${classSession.className}</h3>
+            <p><strong>Class Type:</strong> ${classSession.classType}</p>
+            <p><strong>Start Time:</strong> ${classSession.startTime}</p>
+            <p><strong>End Time:</strong> ${classSession.endTime}</p>
+            <p><strong>Max Capacity:</strong> ${classSession.maxCapacity}</p>
+            <p><strong>Description:</strong> ${classSession.description}</p>
+            <button class="edit-class" data-class-id="${classSession.id}">Edit</button>
+            <button class="delete-class" data-class-id="${classSession.id}">Delete</button>
+        `;
+        return classSessionElement;
+    }
+
+    // Function to display class sessions
+    function displayClassSessions(classSessions) {
+        const classSessionsList = document.getElementById('class-sessions-list');
+        classSessionsList.innerHTML = '';
+        classSessions.forEach(classSession => {
+            const classSessionElement = createClassSessionElement(classSession);
+            classSessionsList.appendChild(classSessionElement);
+        });
+    }
+
+    // Sample class sessions data (replace with actual data from server)
+    const sampleClassSessions = [
+        {
+            id: 1,
+            classType: 'Cardio',
+            className: 'Morning Cardio Blast',
+            startTime: '08:00 AM',
+            endTime: '09:00 AM',
+            maxCapacity: 20,
+            description: 'A high-intensity cardio workout to start your day!'
+        },
+        {
+            id: 2,
+            classType: 'Strength Training',
+            className: 'Total Body Sculpt',
+            startTime: '10:00 AM',
+            endTime: '11:00 AM',
+            maxCapacity: 15,
+            description: 'A full-body strength training session for all fitness levels.'
+        }
+    ];
+
+    // Display sample class sessions on page load
+    displayClassSessions(sampleClassSessions);
+
     // Class Session Management Functionality
     document.getElementById('add-class-session').addEventListener('click', function(event) {
         event.preventDefault(); // Prevent form submission
@@ -183,6 +225,13 @@
             // Handle response from the server
             console.log(data);
             // Optionally, you can display a message to the user indicating success or failure
+
+            // Update the displayed class sessions with the new data
+            // Assuming data is returned from the server containing the newly added class session
+            // Update the sampleClassSessions array with the new class session
+            sampleClassSessions.push(data);
+            // Display the updated class sessions
+            displayClassSessions(sampleClassSessions);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -197,69 +246,47 @@
         document.getElementById('description').value = '';
     });
 
-    document.getElementById('delete-class-session').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent form submission
-        // Add functionality to delete class session
-        // You can send a request to the server to delete the selected class session
-        // Example using fetch API:
-        fetch('delete_class_action.php', {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                // Include any data needed to identify the session to delete
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle response from the server
-            console.log(data);
-            // Optionally, you can display a message to the user indicating success or failure
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Handle errors
-        });
+    // Edit Class Session Button Click Event
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('edit-class')) {
+            const classId = event.target.getAttribute('data-class-id');
+            const classSessionToEdit = sampleClassSessions.find(session => session.id == classId);
+            document.getElementById('edit-class-id').value = classId;
+            // Populate edit form fields with class session data
+            // Assuming you have fields with IDs for editing
+            document.getElementById('edit-class-type').value = classSessionToEdit.classType;
+            document.getElementById('edit-class-name').value = classSessionToEdit.className;
+            document.getElementById('edit-start-time').value = classSessionToEdit.startTime;
+            document.getElementById('edit-end-time').value = classSessionToEdit.endTime;
+            document.getElementById('edit-max-capacity').value = classSessionToEdit.maxCapacity;
+            document.getElementById('edit-description').value = classSessionToEdit.description;
+            // Show the edit form
+            document.getElementById('edit-form').style.display = 'block';
+        }
     });
 
-    document.getElementById('update-class-session').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent form submission
-        // Add functionality to update class session
-        // You can send a request to the server to update the selected class session
-        // Example using fetch API:
-        fetch('edit_class_session_action.php', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                // Include any data needed to identify the session to update
-                // Include updated data for the session
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle response from the server
-            console.log(data);
-            // Optionally, you can display a message to the user indicating success or failure
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Handle errors
-        });
-    });
-    
-    document.getElementById('edit-class-session').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent form submission
-        // Show the edit form
-        document.getElementById('edit-form').style.display = 'block';
-    });
-    
+    // Cancel Edit Button Click Event
     document.getElementById('cancel-edit').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
         // Hide the edit form
         document.getElementById('edit-form').style.display = 'none';
+    });
+
+    // Delete Class Session Button Click Event
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('delete-class')) {
+            const classId = event.target.getAttribute('data-class-id');
+            document.getElementById('delete-class-id').value = classId;
+            // Show the delete form
+            document.getElementById('delete-form').style.display = 'block';
+        }
+    });
+
+    // Cancel Delete Button Click Event
+    document.getElementById('cancel-delete').addEventListener('click', function(event) {
+        event.preventDefault();
+        // Hide the delete form
+        document.getElementById('delete-form').style.display = 'none';
     });
 </script>
 
