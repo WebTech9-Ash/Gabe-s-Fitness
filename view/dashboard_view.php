@@ -51,7 +51,7 @@
     
             <div class="admin_redirect">
                 <h2> Gym Owner? </h2>
-                <button class="redirect_button" id="redirect_button"> Click Here </button>
+                <button> <a href = "../admin/management.php">Click Here<a> </button>
             </div>
         </div>
         <div class="services_wrapper">
