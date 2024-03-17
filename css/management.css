@@ -106,15 +106,8 @@ html:not(.dark-mode) {
     transition: background-color 0.3s ease;
 }
 
-.toggle-dark-mode:hover {
-    background-color: var(--dark-secondary-color);
-}
 
-.toggle-dark-mode .fa {
-    font-size: 20px;
-    line-height: 40px;
-    margin-left: 9px;
-}
+
 
 .dark-mode {
     background-color: var(--dark-background-color);
