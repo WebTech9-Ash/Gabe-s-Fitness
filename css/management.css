@@ -1,0 +1,192 @@
+* {
+    font-family: "Manrope", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: white; /* Primary color for the sidebar */
+    --secondary-color: black; /* Secondary color for buttons and links */
+    --text-color: black; /* Text color */
+    --background-color: white; /* Background color */
+
+    --dark-primary-color: black;
+    --dark-secondary-color: #2980b9;
+    --dark-text-color: white;
+    --dark-background-color: black;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: var(--primary-color);
+    color: var(--dark-text-color);
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 300px;
+}
+
+.sidebar h1 {
+    color: var(--text-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.sidebar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: var(--dark-secondary-color);
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.toggle-dark-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: var(--dark-text-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.toggle-dark-mode:hover {
+    background-color: var(--dark-secondary-color);
+}
+
+.toggle-dark-mode .fa {
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 9px;
+}
+
+.dark-mode {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+.dark-mode .sidebar {
+    background-color: var(--dark-primary-color);
+}
+
+.dark-mode .sidebar a {
+    color: var(--dark-text-color);
+}
+
+.dark-mode .sidebar h1 {
+    color: var(--dark-text-color);
+}
+
+.dark-mode .toggle-dark-mode {
+    background-color: var(--dark-secondary-color);
+}
+
+/* Table styles */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 2px solid green;
+}
+
+
+
+
+table th {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+
+/* Button styles */
+.button {
+    padding: 8px 16px;
+    background-color: var(--dark-secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--dark-secondary-color);
+}
+
+/* Summary box styles */
+.summary-box {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 300px; /* Maximum width for each summary box */
+    text-align: center;
+}
+.statistics{
+
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+.summary-box h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.summary-box p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}

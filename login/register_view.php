@@ -5,7 +5,7 @@
     if(isset($_SESSION['success']) && $_SESSION['success'] === false) {
         echo "<div class='overlay'>
                 <div class='popup'>
-                    <p>The user already exist. Please login !</p>
+                    <p>The user already exist or there is some error happened. Please login !</p>
                     <button onclick='closePopupun()'>OK</button>
                 </div>
               </div>";
