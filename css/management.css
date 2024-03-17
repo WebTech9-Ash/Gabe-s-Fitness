@@ -147,6 +147,11 @@ table th, table td {
 }
 
 
+.dark-mode  table tr {
+   color: white;
+}
+
+
 
 
 table th {
