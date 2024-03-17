@@ -43,6 +43,7 @@
             <!--<label for="member-phone">Phone:</label>
             <input type="tel" id="member-phone" name="member-phone">-->
             <label for="gym">Select Gym:</label>
+            <select id='gym-select' name='gym-select'>
             <?php include '../admin/gym_select.php'; ?>
             <br>
             <input id="register-member" type="submit" value="Register">
