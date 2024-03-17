@@ -93,6 +93,19 @@ body {
     transition: background-color 0.3s ease;
 }
 
+html:not(.dark-mode) {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
 .toggle-dark-mode:hover {
     background-color: var(--dark-secondary-color);
 }
