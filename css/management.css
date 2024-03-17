@@ -6,19 +6,19 @@
 }
 
 :root {
-    --primary-color:black; /* Primary color for the sidebar */
+    --primary-color: white; /* Primary color for the sidebar */
     --secondary-color: black; /* Secondary color for buttons and links */
-    --text-color:white; /* Text color */
-    --background-color:black; /* Background color */
+    --text-color: black; /* Text color */
+    --background-color: white; /* Background color */
 
-    --dark-primary-color: white;
+    --dark-primary-color: black;
     --dark-secondary-color: #2980b9;
-    --dark-text-color:black;
-    --dark-background-color: white;
+    --dark-text-color: white;
+    --dark-background-color: black;
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--dark-background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
