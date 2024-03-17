@@ -50,7 +50,7 @@
                 <option value="Option1">Freemium</option>
             </select>
             <br>
-            <button id="register-member">Register</button>
+            <input id="register-member" type="submit" value="Register">
         </form>
         <div id="member-list">
             <!-- Member profiles will be displayed here -->
