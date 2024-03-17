@@ -20,9 +20,9 @@
                 <nav>
                     <ul>
                         <li><a href="../view/homepage.php">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="../view/about_view.php">About Us</a></li>
                         <li><a href="../view/dashboard_view.php">Dashboard</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="../view/profile.php">Profile</a></li>
                         <li><a href="../view/recommendations_view.php">Activity</a></li>
                     </ul>
                 </nav>
