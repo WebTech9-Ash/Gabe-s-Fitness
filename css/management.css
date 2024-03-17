@@ -190,3 +190,27 @@ table th {
     font-size: 16px;
     margin-bottom: 5px;
 }
+
+.form-container {
+    margin-top: 20px;
+    max-width: 300px; /* Adjust width as needed */
+}
+
+.form-container label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--text-color);
+}
+
+.form-container select {
+    font-size: 16px;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
