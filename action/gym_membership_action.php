@@ -5,10 +5,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $memberEmail = $_POST['member-email'];
     $pass = $_POST['member-password']; 
-    $memberPassword = password_hash($pass, PASSWORD_DEFAULT)
+    $memberPassword = password_hash($pass, PASSWORD_DEFAULT);
     $gymId = $_POST['gym-select'];
-    $membershipPlan = $_POST['member-plan'];
-
+    
     $query = "SELECT UserID FROM Users WHERE Email = '$memberEmail' AND Passwd = '$memberPassword'";
     $result = $conn->query($query);
 
