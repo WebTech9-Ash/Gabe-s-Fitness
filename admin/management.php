@@ -1,6 +1,6 @@
 <?php
 session_start();
-$gymid = 1;
+$gymid = 0;
 include("../setting/connection.php");
 include("../function/gymmangement.php");
 if(isset($_POST['GymID'])){
