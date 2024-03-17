@@ -136,7 +136,7 @@
     }
     // Member Management Functionality
     document.getElementById('register-member').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent form submission
+        //event.preventDefault();
 
         // Get member details from the form
         const name = document.getElementById('member-name').value;
