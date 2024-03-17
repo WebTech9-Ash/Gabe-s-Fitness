@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$gymid = 1;
 include("../setting/connection.php");
 include("../function/gymmangement.php");
 if(isset($_POST['GymID'])){
@@ -60,7 +60,6 @@ if(isset($_POST['GymID'])){
 
     <div id="trainers" class="table-container">
             <h1> Trainers information</h1>
-            <button style = "font-size : 15px, color :black"> <img src = "../assets/add.png">Add a new trainer</button>
             <table>
                 <thead>
                     <tr>
@@ -120,7 +119,7 @@ try {
                     }
                     catch(Exception $e){
 
-                        
+
                     }
                     
                     ?>
