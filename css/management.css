@@ -6,15 +6,15 @@
 }
 
 :root {
-    --primary-color: white; /* Primary color for the sidebar */
+    --primary-color:black; /* Primary color for the sidebar */
     --secondary-color: black; /* Secondary color for buttons and links */
-    --text-color: black; /* Text color */
-    --background-color: white; /* Background color */
+    --text-color:white; /* Text color */
+    --background-color:black; /* Background color */
 
-    --dark-primary-color: black;
+    --dark-primary-color: white;
     --dark-secondary-color: #2980b9;
-    --dark-text-color: white;
-    --dark-background-color: black;
+    --dark-text-color:black;
+    --dark-background-color: white;
 }
 
 body {
