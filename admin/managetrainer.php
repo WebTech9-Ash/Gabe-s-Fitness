@@ -25,9 +25,9 @@ if(isset($_POST['GymID'])){
     <div class="sidebar">
         <h1>Gym Dashboard</h1>
         <ul>
-        <li><a href="../admin/managetrainer.php"><img src="../assets/trainer.png"> Manage Trainers</a></li>
-        <li><a href = "../admin/managegoer.php" ><img src="../assets/customer.png"> Manage Gym User</a></li>
-        <li><a href="../login/logout_view.php"><img src="../assets/logout.png"> Logout</a></li>
+            <li><a href="../admin/managetrainer.php"><img src="../assets/trainer.png"> Manage Trainers</a></li>
+            <li><a href = "../admin/managegoer.php" ><img src="../assets/customer.png"> Manage Gym User</a></li>
+            <li><a href="../login/logout_view.php"><img src="../assets/logout.png"> Logout</a></li>
         </ul>
     </div>
 
@@ -56,38 +56,45 @@ if(isset($_POST['GymID'])){
             </form>
   </div>
 
-    <div id="goers" class="table-container" style="display:none;">
-            <h1>Gym goers information</h1>
+
+    <div id="trainers" class="table-container">
+            <h1> Trainers information</h1>
+
             <table>
                 <thead>
                     <tr>
                         <th>User ID</th>
-                        <th>Membership ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>status</th>
+                        <th>certification</th>
+                        <th>specialization</th>
+                        <th>Status</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-
-                
+               
                     <?php 
+
+try {
+   
+    displayAllTrainers($conn, $gymid); 
+    // Other operations that might throw exceptions
+} catch (Exception $e) {
+    
+} 
+   
                     
-                    try{
-                        
-                        displayAllGoers($conn, $gymid);
+
                     
-                    }
-                    catch(Exception $e){
-                        
-                    }
                     
                     ?>
                 </tbody>
             </table>
-        </div>
-        
+    </div>
+
+
+    
     <button class="toggle-dark-mode" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
 </div>
 
@@ -95,6 +102,7 @@ if(isset($_POST['GymID'])){
 
 
 <script>
+
 
 
 function suspendTrainer(user) {
@@ -139,57 +147,6 @@ function approveTrainer(user) {
             if (xhr.status === 200) {
                 // Handle successful response here
                 console.log("Trainer approved successfully.");
-            } else {
-                // Handle error response here
-                console.error("Error: " + xhr.statusText);
-            }
-        }
-    };
-    xhr.send();
-}
-
-function suspendGoer(user) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../action/suspend_goer_action.php?user=" + user, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                // Handle successful response here
-                console.log("Goer suspended successfully.");
-            } else {
-                // Handle error response here
-                console.error("Error: " + xhr.statusText);
-            }
-        }
-    };
-    xhr.send();
-}
-
-function revokeGoer(user) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../action/revoke_goer_action.php?user=" + user, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                // Handle successful response here
-                console.log("Goer revoked successfully.");
-            } else {
-                // Handle error response here
-                console.error("Error: " + xhr.statusText);
-            }
-        }
-    };
-    xhr.send();
-}
-
-function approveGoer(user) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../action/approve_goer_action.php?user=" + user, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                // Handle successful response here
-                console.log("Goer approved successfully.");
             } else {
                 // Handle error response here
                 console.error("Error: " + xhr.statusText);
