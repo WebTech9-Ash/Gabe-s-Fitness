@@ -44,12 +44,6 @@
             <label for="gym">Select Gym:</label>
             <?php include '../admin/gym_select.php'; ?>
             <label for="member-plan">Membership Plan:</label>
-            <select id="member-plan" name="member-plan">
-                <option value="">Choose a plan</option>
-                <option value="Option1">VIP</option>
-                <option value="Option1">Premium</option>
-                <option value="Option1">Freemium</option>
-            </select>
             <br>
             <input id="register-member" type="submit" value="Register">
         </form>
