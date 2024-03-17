@@ -22,8 +22,7 @@
             <li><a href="../view/dashboard_view.php">Dashboard</a></li>
             <li><a href="../view/profile.php">Profile</a></li>
             <li><a href="../view/ManTrack.php">Tracker</a></li>
-            <li><a href="../view/inventoryMan.php">Inventory</a></li>
-            <li><a href="../view/recommendations_view.php">Activity</a></li>
+            <li><a href="../view/recommendations_view.php">Recommendations</a></li>
         </ul>
     </nav>
     <div class="user-account">
