@@ -47,6 +47,7 @@ function openDataAccess()
     // move to the data access section
     window.location.href = "#data";
 
+    data.style.display = 'flex';
     // Hide the analytics and goals sections
     analytics.style.display = 'none';
     goals.style.display = 'none';
@@ -57,6 +58,7 @@ function openAnalytics()
   // move to the analytics section
   window.location.href = "#analytics";
 
+  analytics.style.display = 'grid';
   // Hide the data acesss and goals sections
   data.style.display = 'none';
   goals.style.display = 'none';
@@ -67,6 +69,7 @@ function openGoals()
   // move to the analytics section
   window.location.href = "#goals";
 
+ goals.style.display = 'flex';
   // Hide the data acesss and analytics sections
   data.style.display = 'none';
   analytics.style.display = 'none';
