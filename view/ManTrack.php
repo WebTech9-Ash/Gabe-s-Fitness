@@ -37,11 +37,6 @@
     <div class="management-section">
         <h2 style="color: green">Member Management</h2>
         <form id="member-form" action="../action/gym_membership_action.php" method="POST">
-            <label for="member-email">Email:</label>
-            <input type="email" id="member-email" name="member-email">
-            <label for="member-password">Password:</label><input type="password" id="member-password" name="member-password">
-            <!--<label for="member-phone">Phone:</label>
-            <input type="tel" id="member-phone" name="member-phone">-->
             <label for="gym">Select Gym:</label>
             <select id='gym-select' name='gym-select'>
             <?php include '../admin/gym_select.php'; ?>
