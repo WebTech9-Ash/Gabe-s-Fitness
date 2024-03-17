@@ -25,6 +25,7 @@ if(isset($_POST['GymID'])){
     <div class="sidebar">
         <h1>Gym Dashboard</h1>
         <ul>
+             <li><a href="../view/homepage.php"><img src="../assets/home.png">Home</a></li>
             <li><a href="javascript:void(0);" onclick="toggleContent('trainers')"><img src="../assets/trainer.png"> Manage Trainers</a></li>
             <li><a href="javascript:void(0);" onclick="toggleContent('goers')"><img src="../assets/customer.png"> Manage Gym User</a></li>
             <li><a href="javascript:void(0);" onclick="toggleContent('report')"><img src="../assets/trainer.png"> Report</a></li>
