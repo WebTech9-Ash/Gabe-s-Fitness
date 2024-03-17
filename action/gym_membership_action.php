@@ -3,14 +3,14 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '../setting/connection.php';
 
-    $memberId = $_POST['member-id'];
     $memberEmail = $_POST['member-email'];
-    $memberPassword = $_POST['member-password']; 
+    $pass = $_POST['member-password']; 
+    $memberPassword = password_hash($pass, PASSWORD_DEFAULT)
     $gymId = $_POST['gym-select'];
     $membershipPlan = $_POST['member-plan'];
 
-    $sql = "SELECT UserID FROM Users WHERE Email = '$memberEmail' AND Passwd = '$memberPassword'";
-    $result = $conn->query($sql);
+    $query = "SELECT UserID FROM Users WHERE Email = '$memberEmail' AND Passwd = '$memberPassword'";
+    $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
         $joinDate = date("Y-m-d"); 
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gymId = mysqli_real_escape_string($conn, $gymId);
         //$membershipPlan = mysqli_real_escape_string($conn, $membershipPlan);
 
-        $query = "INSERT INTO Memberships (UserID, GymID, JoinDate, MembershipType, ExpiryDate) VALUES ('$memberId', '$gymId', '$joinDate', '$membershipPlan', '$expiryDate')";
+        $query = "INSERT INTO Memberships (UserID, GymID, JoinDate, ExpiryDate) VALUES ('$result', '$gymId', '$joinDate', '$expiryDate')";
 
         $result = mysqli_query($conn, $query);
 
