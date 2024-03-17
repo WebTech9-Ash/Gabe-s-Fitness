@@ -7,7 +7,7 @@ if (isset($_POST['join-class'])) {
     $attendanceTime = $_POST['attendance-time'];
 
 
-    $userId = $_SESSION['user-id']; 
+    $userId = $_SESSION['userId']; 
     $query = "INSERT INTO ClassAttendees (SessionID, UserID, AttendanceDateTime) VALUES ('$sessionId', '$userId', '$attendanceTime')";
     $result = mysqli_query($conn, $query);
     if ($result) {
@@ -23,7 +23,7 @@ if (isset($_POST['leave-class'])) {
 
     $sessionId = $_POST['session-id']; 
 
-    $userId = $_SESSION['user-id']; 
+    $userId = $_SESSION['userId']; 
 
     $query = "DELETE FROM ClassAttendees WHERE UserID = '$userId' AND SessionID = '$sessionId'";
     $result = mysqli_query($conn, $query);
