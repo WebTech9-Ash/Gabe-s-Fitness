@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $memberId = mysqli_real_escape_string($conn, $memberId);
         $gymId = mysqli_real_escape_string($conn, $gymId);
-        $membershipPlan = mysqli_real_escape_string($conn, $membershipPlan);
+        //$membershipPlan = mysqli_real_escape_string($conn, $membershipPlan);
 
         $query = "INSERT INTO Memberships (UserID, GymID, JoinDate, MembershipType, ExpiryDate) VALUES ('$memberId', '$gymId', '$joinDate', '$membershipPlan', '$expiryDate')";
 
