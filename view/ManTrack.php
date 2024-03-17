@@ -8,11 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/ManTrack.css">
 </head>
-<body class="light-mode">
+<body class="dark-mode">
 
 <header>
     <div class="logo-container">
-        <a href="../view/homepage.php" class="logo"><img src="../assets/blogo.png" id="logo"></a>
+        <a href="../view/homepage.php" class="logo"><img src="../assets/logo.png" id="logo"></a>
     </div>
     <nav>
         
@@ -22,14 +22,14 @@
                     <li><a href="../view/dashboard_view.php">Dashboard</a></li>
                     <li><a href="../view/profile.php">Profile</a></li>
                     <li><a href="../view/ManTrack.php">Tracker</a></li>
-                    <li><a href="../view/add_class_session.php">Add Class Session</a></li>
+                    <li><a href="../view/add_class_session.php">Class Session</a></li>
                     <li><a href="../view/recommendations_view.php">Recommendations</a></li>
         </ul>
     </nav>
     <div class="user-account">
         <button class="btn_logout" id="btn_logout">Log out</button>
     </div>
-    <img src="../assets/moon.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
+    <img src="../assets/sun.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
 </header>
 
 <div class="container">
