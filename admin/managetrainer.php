@@ -76,17 +76,15 @@ if(isset($_POST['GymID'])){
                
                     <?php 
 
-try {
-   
-    displayAllTrainers($conn, $gymid); 
-    // Other operations that might throw exceptions
-} catch (Exception $e) {
-    
-} 
-   
-                    
+                            try {
+                            
+                                displayAllTrainers($conn, $gymid); 
+                                // Other operations that might throw exceptions
+                            } catch (Exception $e) {
 
-                    
+                                
+                            } 
+   
                     
                     ?>
                 </tbody>
