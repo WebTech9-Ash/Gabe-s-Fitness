@@ -5,12 +5,12 @@ include '../setting/connection.php';
 // Check if the form is submitted
 if (isset($_POST['confirm-edit'])) {
     // Get the POST data
-    $classType = $_POST['ClassType'];
-    $className = $_POST['ClassName'];
-    $startTime = $_POST['StartTime'];
-    $endTime = $_POST['EndTime'];
-    $maxCapacity = $_POST['MaxCapacity'];
-    $description = $_POST['Description'];
+    $ClassType = $_POST['ClassType'];
+    $ClassName = $_POST['ClassName'];
+    $StartTime = $_POST['StartTime'];
+    $EndTime = $_POST['EndTime'];
+    $MaxCapacity = $_POST['MaxCapacity'];
+    $Description = $_POST['Description'];
 
     // Prepare SQL statement to insert data into the database
     $sql = "INSERT INTO ClassSessions (ClassType, ClassName, StartTime, EndTime, MaxCapacity, Description) 
@@ -18,7 +18,7 @@ if (isset($_POST['confirm-edit'])) {
 
     // Prepare the statement
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ssssss", $classType, $className, $startTime, $endTime, $maxCapacity, $description);
+    mysqli_stmt_bind_param($stmt, "ssssss", $ClassType, $ClassName, $StartTime, $EndTime, $MaxCapacity, $Description);
 
     // Execute the statement
     if (mysqli_stmt_execute($stmt)) {

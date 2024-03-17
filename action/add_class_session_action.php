@@ -4,17 +4,17 @@ include '../setting/connection.php';
 
 if (isset($_POST['add-class-session'])) {
     // Collect form data and store in variables
-    $classType = $_POST['ClassType'];
-    $className = $_POST['ClassName'];
-    $startTime = $_POST['StartTime'];
-    $endTime = $_POST['EndTime'];
-    $maxCapacity = $_POST['MaxCapacity'];
-    $description = $_POST['Description'];
+    $ClassType = $_POST['ClassType'];
+    $ClassName = $_POST['ClassName'];
+    $StartTime = $_POST['StartTime'];
+    $EndTime = $_POST['EndTime'];
+    $MaxCapacity = $_POST['MaxCapacity'];
+    $Description = $_POST['Description'];
 
     // Prepare and execute SQL statement to check if the class session already exists
     $checkDuplicateQuery = "SELECT COUNT(*) as count FROM ClassSessions WHERE ClassName = ?";
     $stmtCheck = $conn->prepare($checkDuplicateQuery);
-    $stmtCheck->bind_param("s", $className);
+    $stmtCheck->bind_param("s", $ClassName);
     $stmtCheck->execute();
     $resultCheck = $stmtCheck->get_result();
     $rowCheck = $resultCheck->fetch_assoc();
@@ -30,7 +30,7 @@ if (isset($_POST['add-class-session'])) {
     $insertQuery = "INSERT INTO ClassSessions (ClassType, ClassName, StartTime, EndTime, MaxCapacity, Description) 
                     VALUES (?, ?, ?, ?, ?, ?)";
     $stmtInsert = $conn->prepare($insertQuery);
-    $stmtInsert->bind_param("ssssss", $classType, $className, $startTime, $endTime, $maxCapacity, $description);
+    $stmtInsert->bind_param("ssssss", $ClassType, $ClassName, $StartTime, $EndTime, $MaxCapacity, $Description);
 
     if ($stmtInsert->execute()) {
         // Redirect back to the class session page after a successful add
