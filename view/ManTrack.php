@@ -33,20 +33,31 @@
     <!-- Member Management Section -->
     <div class="management-section">
         <h2 style="color: green">Member Management</h2>
-        <form id="member-form">
-            <label for="member-name">Name:</label>
-            <input type="text" id="member-name" name="member-name">
+        <form id="member-form" action="../action/gym_membership_action.php" method="POST">
+            <label for="member-id">Name:</label>
+            <input type="text" id="member-id" name="member-id">
             <label for="member-email">Email:</label>
             <input type="email" id="member-email" name="member-email">
-            <label for="member-phone">Phone:</label>
-            <input type="tel" id="member-phone" name="member-phone">
+            <label for="member-password">Password:</label><input type="password" id="member-password" name="member-password">
+            <!--<label for="member-phone">Phone:</label>
+            <input type="tel" id="member-phone" name="member-phone">-->
+            <label for="gym">Select Gym:</label>
+            <?php include '../action/gym_select.php'; ?>
+            <label for="member-plan">Membership Plan:</label>
+            <select id="member-plan" name="member-plan">
+                <option value="">Choose a plan</option>
+                <option value="Option1">VIP</option>
+                <option value="Option1">Premium</option>
+                <option value="Option1">Freemium</option>
+            </select>
             <br>
             <button id="register-member">Register</button>
         </form>
         <div id="member-list">
             <!-- Member profiles will be displayed here -->
-        </div>
     </div>
+</div>
+
 
     <!-- Attendance Tracking Section -->
     <div class="attendance-section">

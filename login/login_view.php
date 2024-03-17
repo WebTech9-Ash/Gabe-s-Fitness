@@ -5,6 +5,7 @@
  isLogin();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +17,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body class="light-mode">
+<body class="dark-mode">
     <header> 
-        <img src="../assets/logo.png" id="logo" alt="logo">
+        <img src="../assets/logo (2).png" id="logo" alt="logo">
 
         <div class="navbar_toggle" id="mobile_menu">
             <span class="bar"></span> 
@@ -27,7 +28,7 @@
         </div>
         <nav class="navigation_bar">
             <a href="../view/homepage.php">Home</a>
-            <a href="#">About</a>
+            <a href="../view/about_view.php">About Us</a>
             <button class="btn_login">Login</button>
         </nav>
 
@@ -75,9 +76,7 @@
                 <div class="register">
                     <!-- register page link -->
                     <p> 
-                        Don't have an account?
-                        
-                        
+                        Don't have an account?  
                         <a href="register_view.php" class="reigster_link">Register Now</a>
                     </p>
 
@@ -92,8 +91,7 @@
                             unset($_SESSION["loginFailed"]);
                         }
 
-
-                        ?>
+                    ?>
                 </div>
                 
             </form>

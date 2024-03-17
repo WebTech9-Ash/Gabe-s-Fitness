@@ -7,6 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
 }
 
 :root 
@@ -31,16 +33,10 @@
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
-/* Resetting default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Manrope", sans-serif;
-}
 
 /* General styles */
-body {
+body 
+{
     background-color:var(--secondary-color);
     color: var(--primary-color);
 }
@@ -87,12 +83,32 @@ nav ul li {
 nav ul li a {
     color:var(--primary-color);
     text-decoration: none;
+    position: relative;
+}
+
+nav > ul > li > a::after
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: right;
+}
+
+nav > ul > li > a:hover::after
+{
+    transform-origin: left;
+    transform: scaleX(1);
 }
 
 a{
-
     text-decoration: none;
-
 }
 
 .btn_logout{
@@ -104,7 +120,7 @@ a{
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.3em;
-    color: white;
+    color: var(--primary-color);
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
@@ -112,7 +128,7 @@ a{
 
 .btn_logout:hover
 {
-    background: var(--secondary-color);
+    background: rgb(0, 128, 75) !important;
     color: var(--primary-color);
 }
 
@@ -134,7 +150,8 @@ a{
 
 
 /* Testimonials section styles */
-.testimonials {
+.testimonials 
+{
     padding: 100px 0;
     text-align: center;
 }
@@ -142,7 +159,7 @@ a{
 /* Testimonial container (for the entire slider) */
 .testimonial-container {
     width: 100%;
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -158,9 +175,9 @@ a{
     margin-bottom: 70px;
 }
 .testimonial {
-    flex: 0 0 calc(33.33% - 20px); /* Adjust for responsiveness */
+    flex: 0 0 calc(33.33% - 20px);
     background-color: var(--secondary-color);
-    padding: 30px; /* Increased padding for larger boxes */
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px var(--primary-color);
     transition: transform 0.3s ease;

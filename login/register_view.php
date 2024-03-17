@@ -41,9 +41,9 @@
     <link rel="stylesheet" href="../css/register.css">
 </head>
 
-<body class="light-mode" >
+<body class="dark-mode" >
     <header> 
-        <img src="../assets/logo.png" id="logo" alt="logo">
+        <img src="../assets/logo (2).png" id="logo" alt="logo">
         <div class="navbar_toggle" id="mobile_menu">
             <span class="bar"></span> 
             <span class="bar"></span>
@@ -52,7 +52,7 @@
 
         <nav class="navigation_bar">
             <a href="../view/homepage.php">Home</a>
-            <a href="#">About</a>
+            <a href="../view/about_view.php">About</a>
             <button class="btn_register">Sign Up</button>
         </nav>
         <img src="../assets/sun.png" id="toggle" alt="sun" onclick="toggleColorScheme()">
@@ -145,8 +145,6 @@
                         <option value="3">Advanced</option>
                     </select>
                 </div>
-
-          
 
                 <div class="fit_info">
                     <label for="fit_goal"> Fitness Goal </label>  
