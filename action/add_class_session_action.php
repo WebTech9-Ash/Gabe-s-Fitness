@@ -12,7 +12,7 @@ if (isset($_POST['add-class-session'])) {
     $description = $_POST['description'];
 
     // Prepare and execute SQL statement to check if the class session already exists
-    $checkDuplicateQuery = "SELECT COUNT(*) as count FROM ClassSessions WHERE className = ?";
+    $checkDuplicateQuery = "SELECT COUNT(*) as count FROM ClassSessions WHERE ClassName = ?";
     $stmtCheck = $conn->prepare($checkDuplicateQuery);
     $stmtCheck->bind_param("s", $className);
     $stmtCheck->execute();
