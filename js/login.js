@@ -52,7 +52,7 @@ function toggleColorScheme()
             else 
             {
                 console.log('dark')
-                logo.src = '../assets/logo (2).png'; // Change back to light mode logo
+                logo.src = '../assets/logo.png'; // Change back to light mode logo
                 document.getElementById('toggle').src = '../assets/sun.png'; // Change toggle image to sun
             }
 }
