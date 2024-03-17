@@ -7,6 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = $_POST['member-password']; 
     $memberPassword = password_hash($pass, PASSWORD_DEFAULT);
     $gymId = $_POST['gym-select'];
+
+    echo "Member Email: " . $memberEmail . "<br>";
+    echo "Hashed Password: " . $memberPassword . "<br>";
+    echo "Gym ID: " . $gymId . "<br>";
     
     $query = "SELECT UserID FROM Users WHERE Email = '$memberEmail' AND Passwd = '$memberPassword'";
     $result = $conn->query($query);
