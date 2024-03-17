@@ -8,11 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/ManTrack.css">
 </head>
-<body class="light-mode">
+<body class="dark-mode">
 
 <header>
     <div class="logo-container">
-        <a href="#" class="logo"><img src="../assets/blogo.png" id="logo"></a>
+        <a href="../view/homepage.php" class="logo"><img src="../assets/logo.png" id="logo"></a>
     </div>
     <nav>
         <ul>
@@ -22,10 +22,10 @@
             <li><a href="../view/profile.php">Profile</a></li>
             <li><a href="../view/ManTrack.php">Tracker</a></li>
             <li><a href="../view/add_class_session.php">Class Sessions</a></li>
-            <li><a href="../view/recommendations_view.php">Activity</a></li>
+            <li><a href="../view/recommendations_view.php">Recommendations</a></li>
         </ul>
     </nav>
-    <img src="../assets/moon.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
+    <img src="../assets/sun.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
 </header>
 
 <div class="container">
@@ -132,11 +132,11 @@
          // Toggle logo image source
          const logo = document.getElementById('logo');
         if (body.classList.contains('dark-mode')) {
-            logo.src = 'logo (2).png'; // Change to dark mode logo
-            document.getElementById('toggle').src = 'sun.png'; // Change toggle image to moon
+            logo.src = '../assets/logo.png'; // Change to dark mode logo
+            document.getElementById('toggle').src = '../assets/sun.png'; // Change toggle image to moon
         } else {
-            logo.src = 'blogo.png'; // Change back to light mode logo
-            document.getElementById('toggle').src = 'moon.png'; // Change toggle image to sun
+            logo.src = '../assets/blogo.png'; // Change back to light mode logo
+            document.getElementById('toggle').src = '../assets/moon.png'; // Change toggle image to sun
         }
     }
     
