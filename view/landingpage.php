@@ -18,7 +18,7 @@
        <img src="../assets/logo.png" id="logo" alt="logo">
         <ul>
             <li class="link"><a href="../view/homepage.php">Home</a></li>
-            <li class="link"><a href="#">About Us</a></li>
+            <li class="link"><a href="../view/about_view.php">About Us</a></li>
             <li class="link"><a href="../login/register_view.php">Sign up</a></li>
             <li class="link"><a href="../login/login_view.php">Login</a></li>
         </ul>
