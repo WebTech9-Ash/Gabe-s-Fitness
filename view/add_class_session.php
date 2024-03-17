@@ -59,7 +59,6 @@
             <br>
             <button id="add-class-session">Add Class Session</button>
             <button id="delete-class-session">Delete Class Session</button>
-            <button id="update-class-session">Update Class Session</button>
             <button id="edit-class-session">Edit Class Session</button>
         </form>
         
