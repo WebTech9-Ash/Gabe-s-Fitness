@@ -118,11 +118,11 @@
          // Toggle logo image source
          const logo = document.getElementById('logo');
         if (body.classList.contains('dark-mode')) {
-            logo.src = 'logo (2).png'; // Change to dark mode logo
-            document.getElementById('toggle').src = 'sun.png'; // Change toggle image to moon
+            logo.src = '../assets/logo.png'; // Change to dark mode logo
+            document.getElementById('toggle').src = '../assets/sun.png'; // Change toggle image to moon
         } else {
-            logo.src = 'blogo.png'; // Change back to light mode logo
-            document.getElementById('toggle').src = 'moon.png'; // Change toggle image to sun
+            logo.src = '../assets/blogo.png'; // Change back to light mode logo
+            document.getElementById('toggle').src = '../assets/moon.png'; // Change toggle image to sun
         }
     }
     // Member Management Functionality
