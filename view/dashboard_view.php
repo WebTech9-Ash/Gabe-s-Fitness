@@ -43,9 +43,16 @@
             <br>
             <img src="../assets/sun.png" id="toggle" alt="sun" width="30px" height="30px" onclick="toggleColorScheme()">
         </div>
-        <div class="recording">
-            <h2> Record Your Fitness Data </h2>
-            <button class="recording_button" id="recording_button" onclick="openRecording()"> Get Started </button>
+        <div class="useroptions">
+            <div class="recording">
+                <h2> Record Your Fitness Data </h2>
+                <button class="recording_button" id="recording_button" onclick="openRecording()"> Get Started </button>
+            </div>
+    
+            <div class="admin_redirect">
+                <h2> Gym Owner? </h2>
+                <button> <a href = "../admin/management.php">Click Here<a> </button>
+            </div>
         </div>
         <div class="services_wrapper">
             <div class="services_card">

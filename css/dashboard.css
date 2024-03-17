@@ -164,7 +164,14 @@ nav > ul > li > a:hover::after
     text-align: center;   
 }
 
-.recording
+.useroptions
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.recording, .admin_redirect
 {
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -173,7 +180,7 @@ nav > ul > li > a:hover::after
     text-align: center;
 }
 
-.recording > .recording_button
+.recording > .recording_button, .admin_redirect > .redirect_button
 {
     width: 15rem;
     height: 2.5rem;
@@ -189,7 +196,7 @@ nav > ul > li > a:hover::after
     transition: .5s;
 }
 
-.recording_button > button:hover
+.recording_button > button:hover, .redirect_button > button:hover
 {
     background: var(--primary-color);
     color: var(--secondary-color);
