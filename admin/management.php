@@ -246,10 +246,9 @@ function approveGoer(user) {
     xhr.send();
 }
 
-
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-}
+    var html = document.documentElement;
+    html.classList.toggle("dark-mode");}
 
 function toggleContent(id) {
     var elements = document.getElementsByClassName('table-container');
