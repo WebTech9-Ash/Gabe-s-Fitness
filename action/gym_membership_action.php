@@ -10,10 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $query = "SELECT UserID FROM Users WHERE Email = '$memberEmail' AND Passwd = '$memberPassword'";
     $result = $conn->query($query);
-    echo $result;
-    echo $memberEmail;
-    echo $pass;
-    echo $memberPassword;
+    echo "<p>$result</p>";
+   
 
     if ($result->num_rows > 0) {
         $joinDate = date("Y-m-d"); 
