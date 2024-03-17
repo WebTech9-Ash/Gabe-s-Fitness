@@ -1,6 +1,10 @@
 <?php
 session_start();
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Set the 'userId' session variable
+    $_SESSION['userId'] = 6;
     include '../setting/connection.php';
     
     $gymId = $_POST['gym-select'];
