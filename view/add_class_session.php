@@ -59,17 +59,17 @@
         <div id="class-sessions-list"></div>
 
         <!-- Edit Class Session Form -->
-        <form id="edit-form" action="../action/edit_class_session_action.php" method="post">
+        <form id="edit-form" action="../action/edit_class_session_action.php" method="post" style="display: none;">
             <h2 style="color: blue;">Edit Class Session</h2>
             <label for="edit-class-id">Class ID:</label>
             <input type="text" id="edit-class-id" name="edit-class-id" readonly>
             <!-- Add fields to edit -->
-            <button type="submit" name = "confirm-edit" id="confirm-edit">Confirm Edit</button>
+            <button type="submit" name="confirm-edit" id="confirm-edit">Confirm Edit</button>
             <button type="button" id="cancel-edit">Cancel</button>
         </form>
 
         <!-- Delete Class Session Form -->
-        <form id="delete-form" action="../action/delete_class_session_action.php" method="post">
+        <form id="delete-form" action="../action/delete_class_session_action.php" method="post" style="display: none;">
             <h2 style="color: red;">Delete Class Session</h2>
             <label for="delete-class-id">Class ID:</label>
             <input type="text" id="delete-class-id" name="delete-class-id" readonly>
@@ -166,60 +166,6 @@
             classSessionsList.appendChild(classSessionElement);
         });
     }
-
-    // Class Session Management Functionality
-    document.getElementById('add-class-session').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Get class session details from the form
-        const classType = document.getElementById('class-type').value;
-        const className = document.getElementById('class-name').value;
-        const startTime = document.getElementById('start-time').value;
-        const endTime = document.getElementById('end-time').value;
-        const maxCapacity = document.getElementById('max-capacity').value;
-        const description = document.getElementById('description').value;
-
-        // Send data to the server for insertion into the database
-        // Example using fetch API:
-        fetch('add_class_session_action.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                classType: classType,
-                className: className,
-                startTime: startTime,
-                endTime: endTime,
-                maxCapacity: maxCapacity,
-                description: description
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle response from the server
-            console.log(data);
-            // Optionally, you can display a message to the user indicating success or failure
-
-            // Update the displayed class sessions with the new data
-            // Assuming data is returned from the server containing the newly added class session
-            // Update the sampleClassSessions array with the new class session
-            sampleClassSessions.push(data);
-            // Display the updated class sessions
-            displayClassSessions(sampleClassSessions);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Handle errors
-        });
-
-        // Clear the form fields
-        document.getElementById('class-name').value = '';
-        document.getElementById('start-time').value = '';
-        document.getElementById('end-time').value = '';
-        document.getElementById('max-capacity').value = '';
-        document.getElementById('description').value = '';
-    });
 
     // Edit Class Session Button Click Event
     document.addEventListener('click', function(event) {
