@@ -39,7 +39,17 @@ if(isset($_POST['GymID'])){
                 <label for="gym">Select among your gyms:</label>
                 <select name="GymID" id="gym">
                     <?php
-                    identifyYourGym($conn, $_SESSION['userId']);
+                    try{
+
+                        identifyYourGym($conn, $_SESSION['userId']);
+
+
+                    }
+
+                    catch(Exception$e){
+                
+                    }
+                    
                     ?>
                 </select>
                 <br><br>
@@ -64,7 +74,22 @@ if(isset($_POST['GymID'])){
                     </tr>
                 </thead>
                 <tbody>
-                    <?php displayAllTrainers($conn, $gymid); ?>
+               
+                    <?php 
+
+try {
+   
+    displayAllTrainers($conn, $gymid); 
+    // Other operations that might throw exceptions
+} catch (Exception $e) {
+    
+} 
+   
+                    
+
+                    
+                    
+                    ?>
                 </tbody>
             </table>
     </div>
@@ -84,7 +109,20 @@ if(isset($_POST['GymID'])){
                     </tr>
                 </thead>
                 <tbody>
-                    <?php displayAllGoers($conn, $gymid); ?>
+
+                
+                    <?php 
+                    
+                    try{
+                        
+                        displayAllGoers($conn, $gymid);
+                    
+                    }
+                    catch(Exception $e){
+                        
+                    }
+                    
+                    ?>
                 </tbody>
             </table>
         </div>
