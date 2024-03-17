@@ -7,6 +7,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/ManTrack.css">
+    <style>
+        #edit-form {
+            display: none;
+        }
+    </style>
 </head>
 <body class="light-mode">
 
@@ -15,7 +20,6 @@
         <a href="#" class="logo"><img src="../assets/blogo.png" id="logo"></a>
     </div>
     <nav>
-        
         <ul>
             <li><a href="../view/homepage.php">Home</a></li>
             <li><a href="#">About Us</a></li>
@@ -44,22 +48,45 @@
             </select>
             <label for="class-name">Class Name:</label>
             <input type="text" id="class-name" name="class-name">
-            <label for="trainer-select">Trainer:</label>
-            <select id="trainer-select" name="trainer-select">
-                <!-- Trainer options will be populated dynamically -->
-            </select>
             <label for="start-time">Start Time:</label>
             <input type="datetime-local" id="start-time" name="start-time">
             <label for="end-time">End Time:</label>
             <input type="datetime-local" id="end-time" name="end-time">
             <label for="max-capacity">Max Capacity:</label>
-            <input type="number" id="max-capacity" name="max-capacity" min="1" readonly>
+            <input type="number" id="max-capacity" name="max-capacity" min="1">
             <label for="description">Description:</label>
             <textarea id="description" name="description"></textarea>
             <br>
             <button id="add-class-session">Add Class Session</button>
             <button id="delete-class-session">Delete Class Session</button>
             <button id="update-class-session">Update Class Session</button>
+            <button id="edit-class-session">Edit Class Session</button>
+        </form>
+        
+        <!-- Edit Class Session Form -->
+        <form id="edit-form">
+            <h2 style="color: blue;">Edit Class Session</h2>
+            <label for="edit-class-type">Class Type:</label>
+            <select id="edit-class-type" name="edit-class-type">
+                <option value="Cardio">Cardio</option>
+                <option value="Strength Training">Strength Training</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Pilates">Pilates</option>
+                <option value="Zumba">Zumba</option>
+            </select>
+            <label for="edit-class-name">Class Name:</label>
+            <input type="text" id="edit-class-name" name="edit-class-name">
+            <label for="edit-start-time">Start Time:</label>
+            <input type="datetime-local" id="edit-start-time" name="edit-start-time">
+            <label for="edit-end-time">End Time:</label>
+            <input type="datetime-local" id="edit-end-time" name="edit-end-time">
+            <label for="edit-max-capacity">Max Capacity:</label>
+            <input type="number" id="edit-max-capacity" name="edit-max-capacity" min="1">
+            <label for="edit-description">Description:</label>
+            <textarea id="edit-description" name="edit-description"></textarea>
+            <br>
+            <button id="save-edit">Save Changes</button>
+            <button id="cancel-edit">Cancel</button>
         </form>
     </div>
 </div>
@@ -124,49 +151,6 @@
         }
     }
     
-    // Populate trainer select options based on class type
-    document.getElementById('class-type').addEventListener('change', function() {
-        const classType = this.value;
-        // Fetch available trainers for the selected class type
-        fetch('get_trainers.php?classType=' + classType)
-            .then(response => response.json())
-            .then(data => {
-                const trainerSelect = document.getElementById('trainer-select');
-                trainerSelect.innerHTML = '';
-                data.forEach(trainer => {
-                    const option = document.createElement('option');
-                    option.value = trainer.id;
-                    option.textContent = trainer.name;
-                    trainerSelect.appendChild(option);
-                });
-            });
-
-        // Display maximum capacity for the selected class type
-        // You can fetch this information from the server if needed
-        // For demonstration purposes, let's set a default max capacity
-        let maxCapacity;
-        switch (classType) {
-            case 'Cardio':
-                maxCapacity = 20;
-                break;
-            case 'Strength Training':
-                maxCapacity = 15;
-                break;
-            case 'Yoga':
-                maxCapacity = 10;
-                break;
-            case 'Pilates':
-                maxCapacity = 12;
-                break;
-            case 'Zumba':
-                maxCapacity = 25;
-                break;
-            default:
-                maxCapacity = 20; // Default value
-        }
-        document.getElementById('max-capacity').value = maxCapacity;
-    });
-
     // Class Session Management Functionality
     document.getElementById('add-class-session').addEventListener('click', function(event) {
         event.preventDefault(); // Prevent form submission
@@ -174,7 +158,6 @@
         // Get class session details from the form
         const classType = document.getElementById('class-type').value;
         const className = document.getElementById('class-name').value;
-        const trainerId = document.getElementById('trainer-select').value;
         const startTime = document.getElementById('start-time').value;
         const endTime = document.getElementById('end-time').value;
         const maxCapacity = document.getElementById('max-capacity').value;
@@ -182,7 +165,7 @@
 
         // Send data to the server for insertion into the database
         // Example using fetch API:
-        fetch('add_class_session.php', {
+        fetch('add_class_session_action.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -190,7 +173,6 @@
             body: JSON.stringify({
                 classType: classType,
                 className: className,
-                trainerId: trainerId,
                 startTime: startTime,
                 endTime: endTime,
                 maxCapacity: maxCapacity,
@@ -212,6 +194,7 @@
         document.getElementById('class-name').value = '';
         document.getElementById('start-time').value = '';
         document.getElementById('end-time').value = '';
+        document.getElementById('max-capacity').value = '';
         document.getElementById('description').value = '';
     });
 
@@ -219,12 +202,65 @@
         event.preventDefault(); // Prevent form submission
         // Add functionality to delete class session
         // You can send a request to the server to delete the selected class session
+        // Example using fetch API:
+        fetch('delete_class_action.php', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                // Include any data needed to identify the session to delete
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle response from the server
+            console.log(data);
+            // Optionally, you can display a message to the user indicating success or failure
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle errors
+        });
     });
 
     document.getElementById('update-class-session').addEventListener('click', function(event) {
         event.preventDefault(); // Prevent form submission
         // Add functionality to update class session
         // You can send a request to the server to update the selected class session
+        // Example using fetch API:
+        fetch('edit_class_session_action.php', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                // Include any data needed to identify the session to update
+                // Include updated data for the session
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle response from the server
+            console.log(data);
+            // Optionally, you can display a message to the user indicating success or failure
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle errors
+        });
+    });
+    
+    document.getElementById('edit-class-session').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent form submission
+        // Show the edit form
+        document.getElementById('edit-form').style.display = 'block';
+    });
+    
+    document.getElementById('cancel-edit').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent form submission
+        // Hide the edit form
+        document.getElementById('edit-form').style.display = 'none';
     });
 </script>
 
