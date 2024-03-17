@@ -359,7 +359,7 @@ background-color:  var(--secondary-color);;
         height: 3px;
         margin: 5px 0;
         transition: all 0.3s ease-in-out;
-        background: #fff;
+        background: var(--primary-color) !important;
     }
 
     .navigation_bar > a
