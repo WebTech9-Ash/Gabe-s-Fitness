@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Failed to register membership: " . mysqli_error($conn);
         }
-    }
+    
 
     mysqli_close($conn);
 } else {
