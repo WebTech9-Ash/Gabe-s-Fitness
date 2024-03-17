@@ -24,6 +24,7 @@
                         <li><a href="../view/dashboard_view.php">Dashboard</a></li>
                         <li><a href="../view/profile.php">Profile</a></li>
                         <li><a href="../view/ManTrack.php">Tracker</a></li>
+                        <li><a href="../view/add_class_session.php">Add Class Session</a></li>
                         <li><a href="../view/recommendations_view.php">Recommendations</a></li>
                     </ul>
                 </nav>
