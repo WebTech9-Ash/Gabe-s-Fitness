@@ -4,12 +4,12 @@ include '../setting/connection.php';
 
 if (isset($_POST['add-class-session'])) {
     // Collect form data and store in variables
-    $classType = $_POST['class-type'];
-    $className = $_POST['class-name'];
-    $startTime = $_POST['start-time'];
-    $endTime = $_POST['end-time'];
-    $maxCapacity = $_POST['max-capacity'];
-    $description = $_POST['description'];
+    $classType = $_POST['ClassType'];
+    $className = $_POST['ClassName'];
+    $startTime = $_POST['StartTime'];
+    $endTime = $_POST['EndTime'];
+    $maxCapacity = $_POST['MaxCapacity'];
+    $description = $_POST['Description'];
 
     // Prepare and execute SQL statement to check if the class session already exists
     $checkDuplicateQuery = "SELECT COUNT(*) as count FROM ClassSessions WHERE ClassName = ?";
@@ -27,7 +27,7 @@ if (isset($_POST['add-class-session'])) {
     }
 
     // Proceed to insert the class session if it doesn't exist
-    $insertQuery = "INSERT INTO ClassSessions (class_type, class_name, start_time, end_time, max_capacity, description) 
+    $insertQuery = "INSERT INTO ClassSessions (ClassType, ClassName, StartTime, EndTime, MaxCapacity, Description) 
                     VALUES (?, ?, ?, ?, ?, ?)";
     $stmtInsert = $conn->prepare($insertQuery);
     $stmtInsert->bind_param("ssssss", $classType, $className, $startTime, $endTime, $maxCapacity, $description);
