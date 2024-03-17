@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include '../setting/connection.php';
 
 $query = "SELECT GymID, GymName FROM Gyms";
 $result = $conn->query($query);
