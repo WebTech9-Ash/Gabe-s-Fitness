@@ -42,7 +42,7 @@
             <!--<label for="member-phone">Phone:</label>
             <input type="tel" id="member-phone" name="member-phone">-->
             <label for="gym">Select Gym:</label>
-            <?php include '../action/gym_select.php'; ?>
+            <?php include '../admin/gym_select.php'; ?>
             <label for="member-plan">Membership Plan:</label>
             <select id="member-plan" name="member-plan">
                 <option value="">Choose a plan</option>
