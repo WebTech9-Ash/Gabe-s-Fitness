@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$gymid = 0;
 include("../setting/connection.php");
 include("../function/gymmangement.php");
 if(isset($_POST['GymID'])){
@@ -25,9 +25,10 @@ if(isset($_POST['GymID'])){
     <div class="sidebar">
         <h1>Gym Dashboard</h1>
         <ul>
-        <li><a href="../admin/managetrainer.php"><img src="../assets/trainer.png"> Manage Trainers</a></li>
-        <li><a href = "../admin/managegoer.php" ><img src="../assets/customer.png"> Manage Gym User</a></li>
-        <li><a href="../login/logout_view.php"><img src="../assets/logout.png"> Logout</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('trainers')"><img src="../assets/trainer.png"> Manage Trainers</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('goers')"><img src="../assets/customer.png"> Manage Gym User</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('report')"><img src="../assets/trainer.png"> Report</a></li>
+            <li><a href="../login/logout_view.php"><img src="../assets/logout.png"> Logout</a></li>
         </ul>
     </div>
 
@@ -56,6 +57,43 @@ if(isset($_POST['GymID'])){
             </form>
   </div>
 
+
+    <div id="trainers" class="table-container">
+            <h1> Trainers information</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>certification</th>
+                        <th>specialization</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+               
+                    <?php 
+
+try {
+   
+    displayAllTrainers($conn, $gymid); 
+    // Other operations that might throw exceptions
+} catch (Exception $e) {
+    
+} 
+   
+                    
+
+                    
+                    
+                    ?>
+                </tbody>
+            </table>
+    </div>
+
+
     <div id="goers" class="table-container" style="display:none;">
             <h1>Gym goers information</h1>
             <table>
@@ -80,14 +118,22 @@ if(isset($_POST['GymID'])){
                     
                     }
                     catch(Exception $e){
-                        
+
+
                     }
                     
                     ?>
                 </tbody>
             </table>
         </div>
-        
+        <div id="report" class="main-content" style="display:none;">
+            <h1>Gym Summary</h1>
+            <div class="statistics">
+                <!-- Summary Boxes -->
+                <!-- Your summary boxes HTML content here -->
+            </div>
+        </div>
+    </div>
     <button class="toggle-dark-mode" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
 </div>
 

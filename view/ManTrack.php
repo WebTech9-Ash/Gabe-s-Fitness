@@ -26,6 +26,9 @@
                     <li><a href="../view/recommendations_view.php">Recommendations</a></li>
         </ul>
     </nav>
+    <div class="user-account">
+        <button class="btn_logout" id="btn_logout">Log out</button>
+    </div>
     <img src="../assets/moon.png" id="toggle" alt="moon" onclick="toggleColorScheme()">
 </header>
 
@@ -34,22 +37,14 @@
     <div class="management-section">
         <h2 style="color: green">Member Management</h2>
         <form id="member-form" action="../action/gym_membership_action.php" method="POST">
-            <label for="member-id">Name:</label>
-            <input type="text" id="member-id" name="member-id">
             <label for="member-email">Email:</label>
             <input type="email" id="member-email" name="member-email">
             <label for="member-password">Password:</label><input type="password" id="member-password" name="member-password">
             <!--<label for="member-phone">Phone:</label>
             <input type="tel" id="member-phone" name="member-phone">-->
             <label for="gym">Select Gym:</label>
+            <select id='gym-select' name='gym-select'>
             <?php include '../admin/gym_select.php'; ?>
-            <label for="member-plan">Membership Plan:</label>
-            <select id="member-plan" name="member-plan">
-                <option value="">Choose a plan</option>
-                <option value="Option1">VIP</option>
-                <option value="Option1">Premium</option>
-                <option value="Option1">Freemium</option>
-            </select>
             <br>
             <input id="register-member" type="submit" value="Register">
         </form>

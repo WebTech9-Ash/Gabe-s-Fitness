@@ -4,6 +4,11 @@ session_start();
 include("../setting/connection.php");
 include("../function/gymmangement.php");
 if(isset($_POST['GymID'])){
+
+    if (isset($_SESSION["gymId"])){
+
+        unset($_SESSION["gymId"]);
+    }
     $_SESSION["gymId"] = $_POST['GymID'];
     $gymid = $_SESSION["gymId"];
     unset($_SESSION["gymId"]);

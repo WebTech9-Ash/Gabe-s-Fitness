@@ -5,7 +5,6 @@ $query = "SELECT GymID, GymName FROM Gyms";
 $result = $conn->query($query);
 
 if ($result->num_rows > 0) {
-    echo "<select id='dropdown' name='gym-select'>";
     echo "<option value=''>Select a gym</option>";
     
     while($row = $result->fetch_assoc()) {
