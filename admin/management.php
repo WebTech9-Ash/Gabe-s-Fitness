@@ -60,7 +60,7 @@ if(isset($_POST['GymID'])){
 
     <div id="trainers" class="table-container">
             <h1> Trainers information</h1>
-            <button style = "font-size : 15px, color :black"> <img src = "../assets/add.png">Add a new trainer</button>
+
             <table>
                 <thead>
                     <tr>
