@@ -33,7 +33,7 @@
     <div class="management-section">
         <h2 style="color: green">Class Session Management</h2>
         <form id="class-session-form" action="../action/add_class_session_action.php" method="post">
-            <label for="class-type">Class Type:</label>
+            <label for="ClassType">Class Type:</label>
             <select id="class-type" name="class-type">
                 <option value="Cardio">Cardio</option>
                 <option value="Strength Training">Strength Training</option>
@@ -41,15 +41,15 @@
                 <option value="Pilates">Pilates</option>
                 <option value="Zumba">Zumba</option>
             </select>
-            <label for="class-name">Class Name:</label>
+            <label for="ClassName">Class Name:</label>
             <input type="text" id="class-name" name="class-name">
-            <label for="start-time">Start Time:</label>
+            <label for="StartTime">Start Time:</label>
             <input type="datetime-local" id="start-time" name="start-time">
             <label for="end-time">End Time:</label>
             <input type="datetime-local" id="end-time" name="end-time">
-            <label for="max-capacity">Max Capacity:</label>
+            <label for="MaxCapacity">Max Capacity:</label>
             <input type="number" id="max-capacity" name="max-capacity" min="1">
-            <label for="description">Description:</label>
+            <label for="Description">Description:</label>
             <textarea id="description" name="description"></textarea>
             <br>
             <button type="submit" name = "add-class-session" id="add-class-session">Add Class Session</button>
