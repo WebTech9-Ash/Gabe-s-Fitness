@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+:root 
+{
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+}
+
+/* Light mode */
+.light-mode {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Dark mode */
+.dark-mode {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color); 
+}
+
+html 
+{
+    overflow-x: hidden;
+    overflow-y: scroll; 
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.main_container
+{
+    background-color: var(--secondary-color);
+}
+
+/* Header */
+header 
+{
+    background-color: var(--secondary-color);
+    backdrop-filter: blur(50px); 
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header > .container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo
+{
+    max-width: 6.25rem;
+    min-width: 5rem;
+}
+
+nav
+{
+    margin-left: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin-right: 1.25rem;
+}
+
+nav > ul > li > a {
+    color: var(--primary-color);
+    text-decoration: none;
+    position: relative;
+}
+
+nav > ul > li > a::after
+{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.375rem;
+    width: 100%;
+    height: 0.1875rem;
+    background: var(--primary-color);
+    border-radius: 0.3125rem;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: right;
+}
+
+nav > ul > li > a:hover::after
+{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.btn_logout{
+    width: 8.125rem;
+    height: 3.125rem;
+    background: transparent;
+    border: 0.1875rem solid var(--primary-color);
+    outline: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: .5s;
+}
+
+.btn_logout:hover
+{
+    background: rgb(0, 128, 75);
+    color: var(--primary-color);
+}
+
+
+/* Main section */
+.hero
+{
+    text-align: center;
+    margin: 5rem;
+    padding: 5rem;
+}
+
+.hero > .container
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.hero > .container > h1
+{
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center; 
+}
+
+form
+{
+    margin: 2rem;
+    padding: 2rem;
+    border: 0.125rem solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.recordbox
+{
+    position: relative;
+    width: 100%;
+    height: 8rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+
+.recordbox > div
+{
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+}
+
+.recordbox > input
+{
+    width: 80%;
+    height: 35%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    border-bottom: var(--primary-color) solid 0.125rem;
+}
+
+.btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.3em;
+    color: var(--primary-color);
+    font-weight: 500;
+    
+}
+
+
+/* Footer */
+footer 
+{
+    background-color: var(--secondary-color);
+    padding: 50px 0;
+    text-align: center;
+    width: 100vw;
+}
+
+footer .container 
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-info, .quick-links, .social-media 
+{
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.quick-links > ul > li
+{
+    list-style: none;
+}
+
+.contact-info > h3, .quick-links > h3, .social-media > h3 
+{
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-info > p, .quick-links > ul, .social-media > ul 
+{
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.quick-links > ul > li {
+    margin-bottom: 5px;
+}
+
+.social-media > ul > li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-media > ul > li:last-child {
+    margin-right: 0;
+}
+
+.quick-links > ul > li > a
+{
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quick-links > ul > li > a:hover
+{
+    text-decoration: underline;
+}

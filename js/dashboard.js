@@ -33,6 +33,45 @@ function toggleColorScheme()
     }
 }
 
+let data = document.querySelector('#data_access_section');
+let analytics = document.querySelector('#analytics_section');
+let goals = document.querySelector('#goals_section');
+
+function openRecording()
+{
+  window.location.href = "../view/recording_view.php" 
+}
+
+function openDataAccess() 
+{
+    // move to the data access section
+    window.location.href = "#data";
+
+    // Hide the analytics and goals sections
+    analytics.style.display = 'none';
+    goals.style.display = 'none';
+}
+
+function openAnalytics() 
+{
+  // move to the analytics section
+  window.location.href = "#analytics";
+
+  // Hide the data acesss and goals sections
+  data.style.display = 'none';
+  goals.style.display = 'none';
+}
+
+function openGoals() 
+{
+  // move to the analytics section
+  window.location.href = "#goals";
+
+  // Hide the data acesss and analytics sections
+  data.style.display = 'none';
+  analytics.style.display = 'none';
+}
+
 // ------- Charts for Data Access --------
 
 // Workout data chart

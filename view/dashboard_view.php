@@ -14,21 +14,21 @@
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
-<body class="light-mode">
+<body class="dark-mode">
     <div class="main_container">
     <header>
         <!-- header and navigation bar -->
         <div class="container">
-            <a href="#" class="logo"><img src="../assets/blogo.png" id="logo" alt="logo"></a>
+            <a href="../view/homepage.php" class="logo"><img src="../assets/logo (2).png" id="logo" alt="logo"></a>
             <nav>
                 <ul>
                     <li><a href="../view/homepage.php">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="../view/about_view.php">About Us</a></li>
                     <li><a href="../view/dashboard_view.php">Dashboard</a></li>
                     <li><a href="../view/profile.php">Profile</a></li>
                     <li><a href="../view/ManTrack.php">Tracker</a></li>
                     <li><a href="../view/inventoryMan.php">Inventory</a></li>
-                    <li><a href="../view/recommendations_view.php">Activity</a></li>
+                    <li><a href="../view/recommendations_view.php">Recommendations</a></li>
                 </ul>
             </nav>
             <div class="user-account">
@@ -41,20 +41,24 @@
         <div class="container">
             <h1>Our Services</h1>
             <br>
-            <img src="../assets/moon.png" id="toggle" alt="sun" width="30px" height="30px" onclick="toggleColorScheme()">
+            <img src="../assets/sun.png" id="toggle" alt="sun" width="30px" height="30px" onclick="toggleColorScheme()">
+        </div>
+        <div class="recording">
+            <h2> Record Your Fitness Data </h2>
+            <button class="recording_button" id="recording_button" onclick="openRecording()"> Get Started </button>
         </div>
         <div class="services_wrapper">
             <div class="services_card">
-                <a href="#data_access_section">Data Access</a>
-                <!-- <div class="services_btn"><button>Get Started</button></div> -->
+                <button class="section_buttons" id="data_button" onclick="openDataAccess()">Data Access </button>
+                <!-- <a href="#data_access_section">Data Access</a> -->
             </div>
             <div class="services_card">
-                <a href="#analytics_section">Analytics</a>
-                <!-- <div class="services_btn"><button>Get Started</button></div> -->
+                <button class="section_buttons" id="analytics_button" onclick="openAnalytics()">Analytics </button>
+                <!-- <a href="#analytics_section">Analytics</a>   -->
             </div>
             <div class="services_card">
-                <a href="#goals_section">Goals</a>
-                <!-- <div class="services_btn"><button>Get Started</button></div> -->
+                <button class="section_buttons" id="goal_button" onclick="openGoals()">Goals </button>
+                <!-- <a href="#goals_section">Goals</a> -->
             </div>
         </div>
     </div>
@@ -338,12 +342,17 @@
                     </li>
                     <li>
                         <a href="#">
-                            <ion-icon name="logo-twitter" style="width:25px; height:23px; color:rgb(0, 47, 128);"></ion-icon>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" width="25" height="25">
+                                <path d="M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z" fill="rgb(0, 47, 128)"/>
+                            </svg>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <ion-icon name="logo-instagram" style="width:25px; height:23px; color:rgb(0, 47, 128);"></ion-icon>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" width="25" height="25">
+                                <path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z" fill="rgb(0, 47, 128)"/>
+                                <path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z" fill="rgb(0, 47, 128)"/>
+                            </svg>
                         </a>
                     </li>
                 </ul>
