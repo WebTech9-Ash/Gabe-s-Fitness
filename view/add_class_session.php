@@ -210,6 +210,5 @@
         document.getElementById('delete-form').style.display = 'none';
     });
 </script>
-
 </body>
 </html>
