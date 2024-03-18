@@ -3,7 +3,17 @@
 include("../setting/connection.php");
 include("../setting/core.php");
 include("../function/gymmangement.php");
+if (isset($_SESSION["gymId"])){
+
+$gymid = $_SESSION["gymId"];
+unset($_SESSION["gymId"]);
+
+}else{
+
 $gymid = 0;
+
+}
+
 if(isset($_POST['GymID'])){
     $_SESSION["gymId"] = $_POST['GymID'];
     $gymid = $_SESSION["gymId"];
@@ -158,7 +168,6 @@ function revokeTrainer(user) {
 function approveTrainer(user) {
  
  window.location.href =  "../action/approve_trainer_action.php?user="+user+"";
-   
    
 }
 
