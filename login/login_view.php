@@ -48,7 +48,7 @@
                         <ion-icon name="mail"></ion-icon>
                     </span>
                     <!-- Email entry -->
-                    <input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" style= "color:var(--primary-color);" required>
                     <label for="email">Email</label>
                 </div>
 
@@ -57,7 +57,7 @@
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
                     <!-- Password entry -->
-                    <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  style= "color:var(--primary-color);" required>
                     <label for="password">Password</label>
                 </div> 
 
@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- login button -->
-                <button type="submit" class="btn" name="login_btn ">Login</button>
+                <button type="submit" class="btn" name="login_btn" style= "background-color: green;">Login</button>
 
                 <div class="register">
                     <!-- register page link -->
