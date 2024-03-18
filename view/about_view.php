@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +17,41 @@
                     <ul>
                         <li><a href="../view/homepage.php">Home</a></li>
                         <li><a href="../view/about_view.php">About Us</a></li>
-                        <li><a href="../view/dashboard_view.php">Dashboard</a></li>
-                        <li><a href="../view/profile.php">Profile</a></li>
-                        <li><a href="../view/recommendations_view.php">Activity</a></li>
+                        <?php
+                         if(isset($_SESSION["userId"])){
+
+                           echo" <li><a href='../view/dashboard_view.php'>Dashboard</a></li>";
+                           echo " <li><a href='../view/profile.php'>Profile</a></li>";
+                           echo "<li><a href='../view/recommendations_view.php'>Activity</a></li>";
+
+
+                         }
+
+                        ?>
+                       
+                       
                     </ul>
                 </nav>
-                <div class="user-account">
-                    <button class="btn_logout" id="btn_logout">Log out</button>
-                </div>
+
+            <?php
+
+              if(isset($_SESSION['userId'])){
+
+                echo "<div class='user-account'>";
+                    echo "<button class='btn_logout' id='btn_logout'>Log out</button>";
+                echo "</div>";
+
+              }
+
+              else{
+                echo "<div class='user-account'>";
+                echo "<button class='btn_logout' id='btn_logout'>Log in</button>";
+                 echo "</div>";
+
+              }
+
+              ?>
+                
             </div>
         </header>
 

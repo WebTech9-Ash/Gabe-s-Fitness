@@ -1,12 +1,22 @@
 <?php
 session_start();
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Set the 'userId' session variable
     include '../setting/connection.php';
     
-    $gymId = $_POST['gym-select'];
+    if(isset($_POST['gym-select'])) {
+        $gymId = $_POST['gym-select'];
+    } else {
+?>
+        <script>
+            alert("Please select a gym.");
+            // Redirect the user back to the previous page
+            window.history.back();
+        </script>
+<?php
+        exit(); // Stop further execution
+    }
     
     $joinDate = date("Y-m-d");
     $expiryDate = date('Y-m-d', strtotime("+1 year"));
@@ -15,17 +25,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $query = "INSERT INTO Memberships (UserID, GymID, JoinDate, ExpiryDate) VALUES ('" . $_SESSION['userId'] . "', '$gymId', '$joinDate', '$expiryDate')";
 
-
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-            echo "Membership registered successfully.";
-        } else {
-            echo "Failed to register membership: " . mysqli_error($conn);
-        }
-    
+?>
+        <script>
+            alert("Membership registered successfully.");
+            // Redirect the user back to the previous page
+            window.history.back();
+        </script>
+<?php
+    } else {
+?>
+        <script>
+            alert("Failed to register membership: <?php echo mysqli_error($conn); ?>");
+            // Redirect the user back to the previous page
+            window.history.back();
+        </script>
+<?php
+    }
 
     mysqli_close($conn);
 } else {
-    echo "Form data not submitted.";
+?>
+    <script>
+        alert("Failed to submit the form. Please try again.");
+        // Redirect the user back to the previous page
+        window.history.back();
+    </script>
+<?php
 }
+?>

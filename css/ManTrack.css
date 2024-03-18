@@ -2,6 +2,28 @@
     font-family: "Manrope";
 }
 
+:root 
+{
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+}
+
+/* Light mode */
+.light-mode {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Dark mode */
+.dark-mode {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
 body.light-mode {
     background-color: #ffffff;
     color: #000000;

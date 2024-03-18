@@ -1,3 +1,11 @@
+<?php
+include("../setting/connection.php");
+include("../setting/core.php");
+
+isNotLogin();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,24 +51,6 @@
             <br>
             <input id="register-member" type="submit" value="Register">
         </form>
-        <div id="member-list">
-            <!-- Member profiles will be displayed here -->
-    </div>
-</div>
-
-
-    <!-- Attendance Tracking Section -->
-    <div class="attendance-section">
-        <h2 style="color: green">Attendance Tracking</h2>
-        <form id="attendance-form">
-            <label for="member-id">Member ID:</label>
-            <input type="text" id="member-id" name="member-id">
-            <br>
-            <button id="record-attendance">Record Attendance</button>
-        </form>
-        <div id="attendance-report">
-            <!-- Attendance report will be displayed here -->
-        </div>
     </div>
 </div>
 

@@ -1,4 +1,8 @@
 <?php
+include("../setting/connection.php");
+include("../setting/core.php");
+
+isNotLogin();
 
 ?>
 
@@ -44,17 +48,17 @@
             </div>
 
             <div class="recs_container">
-                <h2> Sleep Recommendations</h2>
+                <h2> Fitness Trackers </h2>
                 <div class="rec_scoller snaps-inline">
                     <div class="rec_element">
                         <div class="rec_header">
                             <div class="banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Google Fit</p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://www.google.com/fit/">Read more</a>
                         </div>
                     </div>
 
@@ -63,10 +67,10 @@
                             <div class="banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Oura Rings </p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://ouraring.com/">Read more</a>
                         </div>
                     </div>
 
@@ -75,51 +79,27 @@
                             <div class="banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Fit Bit </p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://www.fitbit.com/global/us/home">Read more</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="recs_container">
-                <h2> Nutrition Recommendations</h2>
+                <h2> Meditation Apps </h2>
                 <div class="rec_scoller">
                     <div class="rec_element">
                         <div class="rec_header">
                             <div class="other_banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Calm </p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://www.calm.com/">Read more</a>
                         </div>
                     </div>               
                     <div class="rec_element">
@@ -127,71 +107,39 @@
                             <div class="other_banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Mindfulness App </p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://www.themindfulnessapp.com/">Read more</a>
                         </div>
                     </div>
+                   
                     <div class="rec_element">
                         <div class="rec_header">
                             <div class="other_banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Headspace</p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://www.headspace.com">Read more</a>
                         </div>
                     </div>
                 </div>               
             </div>
 
             <div class="recs_container">
-                <h2> Weight Recommendations</h2>
+                <h2> Supplements </h2>
                 <div class="rec_scoller">
                     <div class="rec_element">
                         <div class="rec_header">
                             <div class="banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Momentous</p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://www.livemomentous.com/collections/protein">Read more</a>
                         </div>
                     </div>
                     <div class="rec_element">
@@ -199,10 +147,10 @@
                             <div class="banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Optimum Nutrition </p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://www.optimumnutrition.com/en-us">Read more</a>
                         </div>
                     </div>
                     <div class="rec_element">
@@ -210,119 +158,16 @@
                             <div class="banner"></div>
                         </div>
                         <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p> Cellucor </p>
                         </div>
                         <div class="rec_action">
-                            <a href="#">Read more</a>
+                            <a href="https://cellucor.com/collections/protein">Read more</a>
                         </div>
                     </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
+                    
                 </div>              
             </div>
 
-            <div class="recs_container">
-                <h2> Workout Recommendations</h2>
-                <div class="rec_scoller">
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="rec_element">
-                        <div class="rec_header">
-                            <div class="other_banner"></div>
-                        </div>
-                        <div class="rec_content">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="rec_action">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>                 
-            </div>
         </div>
 
         <footer>
