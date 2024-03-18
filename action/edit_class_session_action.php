@@ -2,43 +2,32 @@
 // Include your database connection file
 include '../setting/connection.php';
 
-// Check if the form is submitted
-if (isset($_POST['confirm-edit'])) {
-    // Get the POST data
-    $ClassType = $_POST['ClassType'];
-    $ClassName = $_POST['ClassName'];
-    $StartTime = $_POST['StartTime'];
-    $EndTime = $_POST['EndTime'];
-    $MaxCapacity = $_POST['MaxCapacity'];
-    $Description = $_POST['Description'];
+// Edit Class Session
+if (isset($_POST['edit-class-session'])) {
+    $ClassSessionID = isset($_POST['edit-class-id']) ? $_POST['edit-class-id'] : '';
+    $ClassName = isset($_POST['edit-class-name']) ? $_POST['edit-class-name'] : '';
+    $ScheduleStartDateTime = isset($_POST['edit-start-time']) ? $_POST['edit-start-time'] : '';
+    $ScheduleEndDateTime = isset($_POST['edit-end-time']) ? $_POST['edit-end-time'] : '';
+    $MaxCapacity = isset($_POST['edit-max-capacity']) ? $_POST['edit-max-capacity'] : '';
+    $Description = isset($_POST['edit-description']) ? $_POST['edit-description'] : '';
+    $ClassType = isset($_POST['edit-class-type']) ? $_POST['edit-class-type'] : '';
 
-    // Prepare SQL statement to insert data into the database
-    $sql = "INSERT INTO ClassSessions (ClassType, ClassName, StartTime, EndTime, MaxCapacity, Description) 
-            VALUES (?, ?, ?, ?, ?, ?)";
+    // Update the class session
+    $updateQuery = "UPDATE ClassSessions SET ClassName=?, ScheduleStartDateTime=?, ScheduleEndDateTime=?, MaxCapacity=?, Description=?, ClassType=? WHERE SessionID=?";
+    $stmtUpdate = $conn->prepare($updateQuery);
+    $stmtUpdate->bind_param("ssssssi", $ClassName, $ScheduleStartDateTime, $ScheduleEndDateTime, $MaxCapacity, $Description, $ClassType, $ClassSessionID);
 
-    // Prepare the statement
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ssssss", $ClassType, $ClassName, $StartTime, $EndTime, $MaxCapacity, $Description);
-
-    // Execute the statement
-    if (mysqli_stmt_execute($stmt)) {
-        // Return a success message
-        $response = array('success' => true, 'message' => 'Class session added successfully.');
-        echo json_encode($response);
+    if ($stmtUpdate->execute()) {
+        // Redirect back to the class session page after a successful edit
+        header("Location: ../view/class_session.php");
+        exit();
     } else {
-        // Return an error message if insertion fails
-        $response = array('success' => false, 'message' => 'Error adding class session: ' . mysqli_error($conn));
-        echo json_encode($response);
+        // Redirect back to the form with an error message
+        header("Location: ../view/class_session.php?msg=error");
+        exit();
     }
 
     // Close the prepared statement
-    mysqli_stmt_close($stmt);
-} else {
-    // Return an error message if the form is not submitted
-    $response = array('success' => false, 'message' => 'Form not submitted.');
-    echo json_encode($response);
+    $stmtUpdate->close();
 }
-
-// Close the database connection
-mysqli_close($conn);
 ?>
