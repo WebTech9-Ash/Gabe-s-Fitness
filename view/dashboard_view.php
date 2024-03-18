@@ -1,8 +1,10 @@
 <?php
+include("../setting/connection.php");
+include("../setting/core.php");
 
+isNotLogin();
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
