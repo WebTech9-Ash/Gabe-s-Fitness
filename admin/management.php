@@ -146,57 +146,24 @@ try {
 
 
 function suspendTrainer(user) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../action/suspend_trainer_action.php?user=" + user, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                // Handle successful response here
-                console.log("Trainer suspended successfully.");
-            } else {
-                // Handle error response here
-                console.error("Error: " + xhr.statusText);
-            }
-        }
-    };
-    xhr.send();
+
+    window.location.href =  "../action/suspend_trainer_action.php?user="+user+"";
 }
 
 function revokeTrainer(user) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../action/revoke_trainer_action.php?user=" + user, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                // Handle successful response here
-                console.log("Trainer revoked successfully.");
-            } else {
-                // Handle error response here
-                console.error("Error: " + xhr.statusText);
-            }
-        }
-    };
-    xhr.send();
+    window.location.href =  "../action/revoke_trainer_action.php?user="+user+"";
+    
 }
 
 function approveTrainer(user) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../action/approve_trainer_action.php?user=" + user, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                // Handle successful response here
-                console.log("Trainer approved successfully.");
-            } else {
-                // Handle error response here
-                console.error("Error: " + xhr.statusText);
-            }
-        }
-    };
-    xhr.send();
+ 
+ window.location.href =  "../action/approve_trainer_action.php?user="+user+"";
+   
+   
 }
 
 function suspendGoer(user) {
+
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "../action/suspend_goer_action.php?user=" + user, true);
     xhr.onreadystatechange = function () {
