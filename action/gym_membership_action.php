@@ -20,14 +20,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
         <script>
             alert("Membership registered successfully.");
+            // Redirect the user back to the previous page
+            window.history.back();
         </script>
 <?php
     } else {
-        echo "Failed to register membership: " . mysqli_error($conn);
+?>
+        <script>
+            alert("Failed to register membership: <?php echo mysqli_error($conn); ?>");
+            // Redirect the user back to the previous page
+            window.history.back();
+        </script>
+<?php
     }
 
     mysqli_close($conn);
 } else {
-    echo "Form data not submitted.";
+?>
+    <script>
+        alert("Failed to submit the form. Please try again.");
+        // Redirect the user back to the previous page
+        window.history.back();
+    </script>
+<?php
 }
 ?>
