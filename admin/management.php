@@ -1,8 +1,9 @@
 <?php
-session_start();
-$gymid = 0;
+
 include("../setting/connection.php");
+include("../setting/core.php");
 include("../function/gymmangement.php");
+$gymid = 0;
 if(isset($_POST['GymID'])){
     $_SESSION["gymId"] = $_POST['GymID'];
     $gymid = $_SESSION["gymId"];

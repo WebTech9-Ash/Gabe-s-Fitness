@@ -1,4 +1,8 @@
 <?php
+include("../setting/connection.php");
+include("../setting/core.php");
+
+isNotLogin();
 
 ?>
 
