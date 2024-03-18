@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Set the 'userId' session variable
     include '../setting/connection.php';
@@ -15,17 +14,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $query = "INSERT INTO Memberships (UserID, GymID, JoinDate, ExpiryDate) VALUES ('" . $_SESSION['userId'] . "', '$gymId', '$joinDate', '$expiryDate')";
 
-
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-            echo "Membership registered successfully.";
-        } else {
-            echo "Failed to register membership: " . mysqli_error($conn);
-        }
-    
+?>
+        <script>
+            alert("Membership registered successfully.");
+        </script>
+<?php
+    } else {
+        echo "Failed to register membership: " . mysqli_error($conn);
+    }
 
     mysqli_close($conn);
 } else {
     echo "Form data not submitted.";
 }
+?>
