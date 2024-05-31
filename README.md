@@ -62,32 +62,16 @@ Here are some screenshots of the application:
 
 
 ### Dashboard
-![Dashboard](image/dashboard.png)
+![Dashboard](assets/dashboard_dark.png)
 
-### Add chore
-![Add chore](image/chore_creattion.png)
+### Landing page night mode
+![Landing page dark mode](assets/landing_dark.png)
 
-### update chore
-![update chore](image/update_chore.png)
+### Landing page normal mode
+![Landing page dark mode](assets/landing_dark.png)
 
-### Delete chore
-![Delete chore](image/delete_chore.png)
-
-###  chore Status
-![Chore status](image/choresStatus.png)
-### Add Assignment
-
-![Add Assignment](image/Assignment_creattion.png)
-
-### Assign an Assignment
-
-![Assign an  Assignment](image/chore_assignment.png)
-
-### Updating Assignment
-
-![updating Assignment](image/updating_assignment.png)
-
-
+### Register dark mode
+![register dark mode](assets/register_dark.png)
 
 
   
