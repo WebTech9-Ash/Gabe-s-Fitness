@@ -43,7 +43,8 @@ To install and run ChoresProject locally, follow these steps:
 
 4. **Start the application**:
     ```bash
-    npm start
+    run MAMP OR XAMP and click on start server
+    Insure that the project folder is in htdocs, also ensure that you find db file in the db folder and run it first in your phpMyadmin and create credential to access it by tweaking the connection file in setting folder
     ```
 
 ## Usage
@@ -68,7 +69,7 @@ Here are some screenshots of the application:
 ![Landing page dark mode](assets/landing_dark.png)
 
 ### Landing page normal mode
-![Landing page dark mode](assets/landing_dark.png)
+![Landing page dark mode](assets/landing_sun.png)
 
 ### Register dark mode
 ![register dark mode](assets/register_dark.png)
